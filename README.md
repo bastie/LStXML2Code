@@ -1,9 +1,10 @@
 # LStXML2Code
 
-Program is inspired by nice project https://github.com/MarcelLehmann/Lohnsteuer/forks but implemented in Swift and a side project because I want a LSt implementation for an other project. 
+Program is inspired by nice project https://github.com/MarcelLehmann/Lohnsteuer but implemented in Swift and a side project because I want a LSt implementation for an other project. 
 
 ## License
 
+GNU AFFERO GENERAL PUBLIC LICENSE 3.0 OR LATER
 
 ## CLI
 
