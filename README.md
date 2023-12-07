@@ -6,6 +6,9 @@ Program is inspired by nice project https://github.com/MarcelLehmann/Lohnsteuer 
 
 GNU AFFERO GENERAL PUBLIC LICENSE 3.0 OR LATER
 
+In result of this project contains only the generator AGPL license is using.
+The generated source is **not** under this license.
+
 ## CLI
 
 ```bash
