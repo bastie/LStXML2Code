@@ -8,7 +8,7 @@ import LStXML2Code
 @main
 public struct BMF2Code {
   
-  private static let VERSION = "0.1.0"
+  public static let VERSION = "0.2.0"
   
   
   // MARK: main entry point
@@ -22,7 +22,7 @@ public struct BMF2Code {
       let project = "workspace/LStXML2Code/"
       let xmls = "Tests/LStXML2CodeTests/xml/"
       let test = "Lohnsteuer2023AbJuli.xml"
-      let lang = "Java"
+      let lang = "Swift"
       cmdLineArgs = [CommandLine.arguments[0],"--lang=\(lang)","\(documents)\(project)\(xmls)\(test)"]
     }
 #endif
@@ -79,7 +79,7 @@ public struct BMF2Code {
   // MARK: handling argument
   // handwritten parameter evaluation
   func evalArgs (arguments : [String], reversedCall : Bool = false) -> [String:String] {
-    let supportedLang = ["java"]//, "swift"]
+    let supportedLang = ["java", "swift"]
     let supportedLanguages = "\(supportedLang)".replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "").replacingOccurrences(of: "\"", with: "")
 
     var result : [String:String] = [:]

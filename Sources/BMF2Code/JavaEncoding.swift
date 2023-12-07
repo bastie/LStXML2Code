@@ -25,7 +25,7 @@ open class JavaEncoding : AbstractTreeEncoding {
   var result = ""
   
   var intend = 0
-  public func traverse (node : Node) {
+  open func traverse (node : Node) {
     var output = ""
     for _ in 0..<intend {
       output.append(" ")
@@ -101,7 +101,7 @@ open class JavaEncoding : AbstractTreeEncoding {
       result.append("\(output)\n")
       break
     case "CONSTANTS" : 
-      // nothing to tdo in Java
+      // nothing to do in Java
       break;
     case "CONSTANT" :
       // at the moment CONSTANTS use value attribute instead to VARIABLES with default
