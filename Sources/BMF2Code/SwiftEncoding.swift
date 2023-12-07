@@ -319,7 +319,7 @@ open class SwiftEncoding : AbstractTreeEncoding {
     """
     
     /// BigDecimal implementation in Swift - see JavApi⁴Swift project
-    public struct BigDecimal {
+    public struct BigDecimal : CustomStringConvertible {
     
       private var scale : Int = Int.max
       private var roundingMode : Int = ROUND_UNSET

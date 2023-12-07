@@ -1,79 +1,79 @@
-/// Generated with BMF2Code v0.2.0 @2023-12-07 15:56:30 +0000
+/// Generated with BMF2Code v0.2.1 @2023-12-07 16:10:06 +0000
 
 import Foundation
 public class Lohnsteuer2023AbJuliBig  {
   
   public init (
-    _ JHINZU : BigDecimal = BigDecimal(),
-    _ VBEZS : BigDecimal = BigDecimal(),
-    _ VJAHR : Int = Int(),
-    _ JRE4 : BigDecimal = BigDecimal(),
-    _ KRV : Int = Int(),
-    _ R : Int = Int(),
-    _ ZMVB : Int = Int(),
-    _ KVZ : BigDecimal = BigDecimal(),
-    _ VBEZM : BigDecimal = BigDecimal(),
-    _ f : Double = Double(),
-    _ VKAPA : BigDecimal = BigDecimal(),
-    _ ZKF : BigDecimal = BigDecimal(),
-    _ ALTER1 : Int = Int(),
-    _ PVZ : Int = Int(),
-    _ JRE4ENT : BigDecimal = BigDecimal(),
-    _ LZZ : Int = Int(),
-    _ VMT : BigDecimal = BigDecimal(),
-    _ STERBE : BigDecimal = BigDecimal(),
-    _ MBV : BigDecimal = BigDecimal(),
-    _ RE4 : BigDecimal = BigDecimal(),
-    _ AJAHR : Int = Int(),
-    _ SONSTB : BigDecimal = BigDecimal(),
-    _ LZZHINZU : BigDecimal = BigDecimal(),
-    _ SONSTENT : BigDecimal = BigDecimal(),
-    _ VBEZ : BigDecimal = BigDecimal(),
-    _ STKL : Int = Int(),
-    _ JVBEZ : BigDecimal = BigDecimal(),
-    _ PKPV : BigDecimal = BigDecimal(),
-    _ JFREIB : BigDecimal = BigDecimal(),
-    _ af : Int = Int(),
-    _ PVS : Int = Int(),
-    _ VBS : BigDecimal = BigDecimal(),
-    _ ENTSCH : BigDecimal = BigDecimal(),
-    _ LZZFREIB : BigDecimal = BigDecimal(),
-    _ PKV : Int = Int()) {
-      self.JHINZU = JHINZU
-      self.VBEZS = VBEZS
-      self.VJAHR = VJAHR
-      self.JRE4 = JRE4
-      self.KRV = KRV
-      self.R = R
-      self.ZMVB = ZMVB
-      self.KVZ = KVZ
-      self.VBEZM = VBEZM
-      self.f = f
-      self.VKAPA = VKAPA
-      self.ZKF = ZKF
-      self.ALTER1 = ALTER1
-      self.PVZ = PVZ
-      self.JRE4ENT = JRE4ENT
-      self.LZZ = LZZ
+    VMT : BigDecimal = BigDecimal(),
+    ZKF : BigDecimal = BigDecimal(),
+    PVZ : Int = Int(),
+    ZMVB : Int = Int(),
+    VBEZ : BigDecimal = BigDecimal(),
+    LZZ : Int = Int(),
+    STKL : Int = Int(),
+    SONSTENT : BigDecimal = BigDecimal(),
+    JFREIB : BigDecimal = BigDecimal(),
+    PKPV : BigDecimal = BigDecimal(),
+    RE4 : BigDecimal = BigDecimal(),
+    PKV : Int = Int(),
+    JHINZU : BigDecimal = BigDecimal(),
+    KVZ : BigDecimal = BigDecimal(),
+    SONSTB : BigDecimal = BigDecimal(),
+    ENTSCH : BigDecimal = BigDecimal(),
+    R : Int = Int(),
+    JVBEZ : BigDecimal = BigDecimal(),
+    VBS : BigDecimal = BigDecimal(),
+    JRE4 : BigDecimal = BigDecimal(),
+    af : Int = Int(),
+    LZZFREIB : BigDecimal = BigDecimal(),
+    MBV : BigDecimal = BigDecimal(),
+    JRE4ENT : BigDecimal = BigDecimal(),
+    AJAHR : Int = Int(),
+    VKAPA : BigDecimal = BigDecimal(),
+    VBEZS : BigDecimal = BigDecimal(),
+    STERBE : BigDecimal = BigDecimal(),
+    f : Double = Double(),
+    ALTER1 : Int = Int(),
+    KRV : Int = Int(),
+    LZZHINZU : BigDecimal = BigDecimal(),
+    VBEZM : BigDecimal = BigDecimal(),
+    PVS : Int = Int(),
+    VJAHR : Int = Int()) {
       self.VMT = VMT
-      self.STERBE = STERBE
-      self.MBV = MBV
-      self.RE4 = RE4
-      self.AJAHR = AJAHR
-      self.SONSTB = SONSTB
-      self.LZZHINZU = LZZHINZU
-      self.SONSTENT = SONSTENT
+      self.ZKF = ZKF
+      self.PVZ = PVZ
+      self.ZMVB = ZMVB
       self.VBEZ = VBEZ
+      self.LZZ = LZZ
       self.STKL = STKL
-      self.JVBEZ = JVBEZ
-      self.PKPV = PKPV
+      self.SONSTENT = SONSTENT
       self.JFREIB = JFREIB
-      self.af = af
-      self.PVS = PVS
-      self.VBS = VBS
-      self.ENTSCH = ENTSCH
-      self.LZZFREIB = LZZFREIB
+      self.PKPV = PKPV
+      self.RE4 = RE4
       self.PKV = PKV
+      self.JHINZU = JHINZU
+      self.KVZ = KVZ
+      self.SONSTB = SONSTB
+      self.ENTSCH = ENTSCH
+      self.R = R
+      self.JVBEZ = JVBEZ
+      self.VBS = VBS
+      self.JRE4 = JRE4
+      self.af = af
+      self.LZZFREIB = LZZFREIB
+      self.MBV = MBV
+      self.JRE4ENT = JRE4ENT
+      self.AJAHR = AJAHR
+      self.VKAPA = VKAPA
+      self.VBEZS = VBEZS
+      self.STERBE = STERBE
+      self.f = f
+      self.ALTER1 = ALTER1
+      self.KRV = KRV
+      self.LZZHINZU = LZZHINZU
+      self.VBEZM = VBEZM
+      self.PVS = PVS
+      self.VJAHR = VJAHR
     }
   
   // MARK: Variables
@@ -89,31 +89,31 @@ public class Lohnsteuer2023AbJuliBig  {
   /* 1, wenn das 64. Lebensjahr zu Beginn des Kalenderjahres vollendet wurde, in dem
    der Lohnzahlungszeitraum endet (§ 24 a EStG), sonst = 0 */
   public var ALTER1 : Int
-  /* in VKAPA und VMT enthaltene Entschädigungen nach §24 Nummer 1 EStG 
-   sowie tarifermäßigt zu besteuernde Vorteile bei Vermögensbeteiligungen 
+  /* in VKAPA und VMT enthaltene Entschädigungen nach §24 Nummer 1 EStG
+   sowie tarifermäßigt zu besteuernde Vorteile bei Vermögensbeteiligungen
    (§ 19a Absatz 4 EStG) in Cent */
   public var ENTSCH : BigDecimal = BigDecimal(0)
   /* eingetragener Faktor mit drei Nachkommastellen */
   public var f : Double = 1.0
-  /* Jahresfreibetrag für die Ermittlung der Lohnsteuer für die sonstigen Bezüge 
-   sowie für Vermögensbeteiligungen nach § 19a Absatz 1 und 4 EStG nach Maßgabe der 
-   elektronischen Lohnsteuerabzugsmerkmale nach § 39e EStG oder der Eintragung 
+  /* Jahresfreibetrag für die Ermittlung der Lohnsteuer für die sonstigen Bezüge
+   sowie für Vermögensbeteiligungen nach § 19a Absatz 1 und 4 EStG nach Maßgabe der
+   elektronischen Lohnsteuerabzugsmerkmale nach § 39e EStG oder der Eintragung
    auf der Bescheinigung für den Lohnsteuerabzug 2023 in Cent (ggf. 0) */
   public var JFREIB : BigDecimal
   /* Jahreshinzurechnungsbetrag für die Ermittlung der Lohnsteuer für die sonstigen Bezüge
-   sowie für Vermögensbeteiligungen nach § 19a Absatz 1 und 4 EStG nach Maßgabe der 
-   elektronischen Lohnsteuerabzugsmerkmale nach § 39e EStG oder der Eintragung auf der 
+   sowie für Vermögensbeteiligungen nach § 19a Absatz 1 und 4 EStG nach Maßgabe der
+   elektronischen Lohnsteuerabzugsmerkmale nach § 39e EStG oder der Eintragung auf der
    Bescheinigung für den Lohnsteuerabzug 2023 in Cent (ggf. 0) */
   public var JHINZU : BigDecimal
-  /* Voraussichtlicher Jahresarbeitslohn ohne sonstige Bezüge (d.h. auch ohne Vergütung 
+  /* Voraussichtlicher Jahresarbeitslohn ohne sonstige Bezüge (d.h. auch ohne Vergütung
    für mehrjährige Tätigkeit und ohne die zu besteuernden Vorteile bei Vermögensbeteiligungen,
-   § 19a Absatz 4 EStG) in Cent. 
-   Anmerkung: Die Eingabe dieses Feldes (ggf. 0) ist erforderlich bei Eingaben zu sonstigen 
-   Bezügen (Felder SONSTB, VMT oder VKAPA). 
+   § 19a Absatz 4 EStG) in Cent.
+   Anmerkung: Die Eingabe dieses Feldes (ggf. 0) ist erforderlich bei Eingaben zu sonstigen
+   Bezügen (Felder SONSTB, VMT oder VKAPA).
    Sind in einem vorangegangenen Abrechnungszeitraum bereits sonstige Bezüge gezahlt worden,
-   so sind sie dem voraussichtlichen Jahresarbeitslohn hinzuzurechnen. Gleiches gilt für zu 
-   besteuernde Vorteile bei Vermögensbeteiligungen (§ 19a Absatz 4 EStG). Vergütungen für 
-   mehrjährige Tätigkeit aus einem vorangegangenen Abrechnungszeitraum werden in voller 
+   so sind sie dem voraussichtlichen Jahresarbeitslohn hinzuzurechnen. Gleiches gilt für zu
+   besteuernde Vorteile bei Vermögensbeteiligungen (§ 19a Absatz 4 EStG). Vergütungen für
+   mehrjährige Tätigkeit aus einem vorangegangenen Abrechnungszeitraum werden in voller
    Höhe hinzugerechnet. */
   public var JRE4 : BigDecimal
   /* In JRE4 enthaltene Versorgungsbezuege in Cents (ggf. 0) */
@@ -121,15 +121,15 @@ public class Lohnsteuer2023AbJuliBig  {
   /* Merker für die Vorsorgepauschale
    2 = der Arbeitnehmer ist NICHT in der gesetzlichen Rentenversicherung versichert.
    
-   1 = der Arbeitnehmer ist in der gesetzlichen Rentenversicherung versichert, es gilt die 
+   1 = der Arbeitnehmer ist in der gesetzlichen Rentenversicherung versichert, es gilt die
    Beitragsbemessungsgrenze OST.
    
-   0 = der Arbeitnehmer ist in der gesetzlichen Rentenversicherung versichert, es gilt die 
+   0 = der Arbeitnehmer ist in der gesetzlichen Rentenversicherung versichert, es gilt die
    Beitragsbemessungsgrenze WEST. */
   public var KRV : Int
-  /* Einkommensbezogener Zusatzbeitragssatz eines gesetzlich krankenversicherten Arbeitnehmers, 
+  /* Einkommensbezogener Zusatzbeitragssatz eines gesetzlich krankenversicherten Arbeitnehmers,
    auf dessen Basis der an die Krankenkasse zu zahlende Zusatzbeitrag berechnet wird,
-   in Prozent (bspw. 0,90 für 0,90 %) mit 2 Dezimalstellen. 
+   in Prozent (bspw. 0,90 für 0,90 %) mit 2 Dezimalstellen.
    Der von der Kranken-kasse festgesetzte Zusatzbeitragssatz ist bei Abweichungen unmaßgeblich. */
   public var KVZ : BigDecimal
   /* Lohnzahlungszeitraum:
@@ -138,20 +138,20 @@ public class Lohnsteuer2023AbJuliBig  {
    3 = Woche
    4 = Tag */
   public var LZZ : Int
-  /* Der als elektronisches Lohnsteuerabzugsmerkmal für den Arbeitgeber nach § 39e EStG festgestellte 
-   oder in der Bescheinigung für den Lohnsteuerabzug 2023 eingetragene Freibetrag für den 
+  /* Der als elektronisches Lohnsteuerabzugsmerkmal für den Arbeitgeber nach § 39e EStG festgestellte
+   oder in der Bescheinigung für den Lohnsteuerabzug 2023 eingetragene Freibetrag für den
    Lohnzahlungszeitraum in Cent */
   public var LZZFREIB : BigDecimal
-  /* Der als elektronisches Lohnsteuerabzugsmerkmal für den Arbeitgeber nach § 39e EStG festgestellte 
+  /* Der als elektronisches Lohnsteuerabzugsmerkmal für den Arbeitgeber nach § 39e EStG festgestellte
    oder in der Bescheinigung für den Lohnsteuerabzug 2023 eingetragene Hinzurechnungsbetrag für den
    Lohnzahlungszeitraum in Cent */
   public var LZZHINZU : BigDecimal
-  /* Nicht zu besteuernde Vorteile bei Vermögensbeteiligungen 
+  /* Nicht zu besteuernde Vorteile bei Vermögensbeteiligungen
    (§ 19a Absatz 1 Satz 4 EStG) in Cent */
   public var MBV : BigDecimal
   /* Dem Arbeitgeber mitgeteilte Zahlungen des Arbeitnehmers zur privaten
    Kranken- bzw. Pflegeversicherung im Sinne des §10 Abs. 1 Nr. 3 EStG 2010
-   als Monatsbetrag in Cent (der Wert ist inabhängig vom Lohnzahlungszeitraum immer 
+   als Monatsbetrag in Cent (der Wert ist inabhängig vom Lohnzahlungszeitraum immer
    als Monatsbetrag anzugeben). */
   public var PKPV : BigDecimal = BigDecimal(0)
   /* Krankenversicherung:
@@ -159,24 +159,24 @@ public class Lohnsteuer2023AbJuliBig  {
    1 = ausschließlich privat krankenversicherte Arbeitnehmer OHNE Arbeitgeberzuschuss
    2 = ausschließlich privat krankenversicherte Arbeitnehmer MIT Arbeitgeberzuschuss */
   public var PKV : Int = 0
-  /* 1, wenn bei der sozialen Pflegeversicherung die Besonderheiten in Sachsen zu berücksichtigen sind bzw. 
+  /* 1, wenn bei der sozialen Pflegeversicherung die Besonderheiten in Sachsen zu berücksichtigen sind bzw.
    zu berücksichtigen wären, sonst 0. */
   public var PVS : Int = 0
-  /* 1, wenn er der Arbeitnehmer den Zuschlag zur sozialen Pflegeversicherung 
+  /* 1, wenn er der Arbeitnehmer den Zuschlag zur sozialen Pflegeversicherung
    zu zahlen hat, sonst 0. */
   public var PVZ : Int = 0
-  /* Religionsgemeinschaft des Arbeitnehmers lt. elektronischer Lohnsteuerabzugsmerkmale oder der 
+  /* Religionsgemeinschaft des Arbeitnehmers lt. elektronischer Lohnsteuerabzugsmerkmale oder der
    Bescheinigung für den Lohnsteuerabzug 2023 (bei keiner Religionszugehörigkeit = 0) */
   public var R : Int
-  /* Steuerpflichtiger Arbeitslohn für den Lohnzahlungszeitraum vor Berücksichtigung des 
-   Versorgungsfreibetrags und des Zuschlags zum Versorgungsfreibetrag, des Altersentlastungsbetrags 
-   und des als elektronisches Lohnsteuerabzugsmerkmal festgestellten oder in der Bescheinigung für 
-   den Lohnsteuerabzug 2023 für den Lohnzahlungszeitraum eingetragenen Freibetrags bzw. 
+  /* Steuerpflichtiger Arbeitslohn für den Lohnzahlungszeitraum vor Berücksichtigung des
+   Versorgungsfreibetrags und des Zuschlags zum Versorgungsfreibetrag, des Altersentlastungsbetrags
+   und des als elektronisches Lohnsteuerabzugsmerkmal festgestellten oder in der Bescheinigung für
+   den Lohnsteuerabzug 2023 für den Lohnzahlungszeitraum eingetragenen Freibetrags bzw.
    Hinzurechnungsbetrags in Cent */
   public var RE4 : BigDecimal
-  /* Sonstige Bezüge (ohne Vergütung aus mehrjähriger Tätigkeit) einschließlich nicht tarifermäßigt 
-   zu besteuernde Vorteile bei Vermögensbeteiligungen und Sterbegeld bei Versorgungsbezügen sowie 
-   Kapitalauszahlungen/Abfindungen, soweit es sich nicht um Bezüge für mehrere Jahre handelt, 
+  /* Sonstige Bezüge (ohne Vergütung aus mehrjähriger Tätigkeit) einschließlich nicht tarifermäßigt
+   zu besteuernde Vorteile bei Vermögensbeteiligungen und Sterbegeld bei Versorgungsbezügen sowie
+   Kapitalauszahlungen/Abfindungen, soweit es sich nicht um Bezüge für mehrere Jahre handelt,
    in Cent (ggf. 0) */
   public var SONSTB : BigDecimal
   /* Sterbegeld bei Versorgungsbezuegen sowie Kapitalauszahlungen/Abfindungen,
@@ -206,12 +206,12 @@ public class Lohnsteuer2023AbJuliBig  {
   /* Jahr, in dem der Versorgungsbezug erstmalig gewaehrt wurde; werden
    mehrere Versorgungsbezuege gezahlt, so gilt der aelteste erstmalige Bezug */
   public var VJAHR : Int
-  /* Kapitalauszahlungen / Abfindungen / Nachzahlungen bei Versorgungsbezügen 
+  /* Kapitalauszahlungen / Abfindungen / Nachzahlungen bei Versorgungsbezügen
    für mehrere Jahre in Cent (ggf. 0) */
   public var VKAPA : BigDecimal
-  /* Entschädigungen und Vergütung für mehrjährige Tätigkeit sowie tarifermäßigt 
-   zu besteuernde Vorteile bei Vermögensbeteiligungen (§ 19a Absatz 4 Satz 2 EStG) 
-   ohne Kapitalauszahlungen und ohne Abfindungen bei Versorgungsbezügen 
+  /* Entschädigungen und Vergütung für mehrjährige Tätigkeit sowie tarifermäßigt
+   zu besteuernde Vorteile bei Vermögensbeteiligungen (§ 19a Absatz 4 Satz 2 EStG)
+   ohne Kapitalauszahlungen und ohne Abfindungen bei Versorgungsbezügen
    in Cent (ggf. 0) */
   public var VMT : BigDecimal
   /* Zahl der Freibetraege fuer Kinder (eine Dezimalstelle, nur bei Steuerklassen
@@ -220,10 +220,10 @@ public class Lohnsteuer2023AbJuliBig  {
   /* Zahl der Monate, fuer die Versorgungsbezuege gezahlt werden (nur
    erforderlich bei Jahresberechnung (LZZ = 1) */
   public var ZMVB : Int
-  /* In JRE4 enthaltene Entschädigungen nach § 24 Nummer 1 EStG und zu besteuernde 
+  /* In JRE4 enthaltene Entschädigungen nach § 24 Nummer 1 EStG und zu besteuernde
    Vorteile bei Vermögensbeteiligungen (§ 19a Absatz 4 EStG in Cent */
   public var JRE4ENT : BigDecimal = BigDecimal.ZERO
-  /* In SONSTB enthaltene Entschädigungen nach § 24 Nummer 1 EStG sowie nicht 
+  /* In SONSTB enthaltene Entschädigungen nach § 24 Nummer 1 EStG sowie nicht
    tarifermäßigt zu besteuernde Vorteile bei Vermögensbeteiligungen in Cent */
   public var SONSTENT : BigDecimal = BigDecimal.ZERO
   /* AUSGABEPARAMETER */
@@ -232,12 +232,12 @@ public class Lohnsteuer2023AbJuliBig  {
   public var BK : BigDecimal  = BigDecimal(0)
   /* Bemessungsgrundlage der sonstigen Bezüge (ohne Vergütung für mehrjährige Tätigkeit)
    für die Kirchenlohnsteuer in Cent.
-   Hinweis: Negativbeträge, die aus nicht zu besteuernden Vorteilen bei 
-   Vermögensbeteiligungen (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern BK 
-   (maximal bis 0). Der Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen 
+   Hinweis: Negativbeträge, die aus nicht zu besteuernden Vorteilen bei
+   Vermögensbeteiligungen (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern BK
+   (maximal bis 0). Der Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen
    im Rahmen der Veranlagung zur Einkommensteuer bleibt unberührt. */
   public var BKS : BigDecimal  = BigDecimal(0)
-  /* Bemessungsgrundlage der Vergütung für mehrjährige Tätigkeit und der tarifermäßigt 
+  /* Bemessungsgrundlage der Vergütung für mehrjährige Tätigkeit und der tarifermäßigt
    zu besteuernden Vorteile bei Vermögensbeteiligungen für die Kirchenlohnsteuer in Cent */
   public var BKV : BigDecimal  = BigDecimal(0)
   /* Fuer den Lohnzahlungszeitraum einzubehaltende Lohnsteuer in Cents */
@@ -246,19 +246,19 @@ public class Lohnsteuer2023AbJuliBig  {
    in Cents */
   public var SOLZLZZ : BigDecimal  = BigDecimal(0)
   /* Solidaritätszuschlag für sonstige Bezüge (ohne Vergütung für mehrjährige Tätigkeit in Cent.
-   Hinweis: Negativbeträge, die aus nicht zu besteuernden Vorteilen bei Vermögensbeteiligungen 
-   (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern SOLZLZZ (maximal bis 0). Der 
-   Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen im Rahmen der 
+   Hinweis: Negativbeträge, die aus nicht zu besteuernden Vorteilen bei Vermögensbeteiligungen
+   (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern SOLZLZZ (maximal bis 0). Der
+   Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen im Rahmen der
    Veranlagung zur Einkommensteuer bleibt unberührt. */
   public var SOLZS : BigDecimal  = BigDecimal(0)
-  /* Solidaritätszuschlag für die Vergütung für mehrjährige Tätigkeit und der tarifermäßigt 
+  /* Solidaritätszuschlag für die Vergütung für mehrjährige Tätigkeit und der tarifermäßigt
    zu besteuernden Vorteile bei Vermögensbeteiligungen in Cent */
   public var SOLZV : BigDecimal  = BigDecimal(0)
-  /* Lohnsteuer für sonstige Bezüge (ohne Vergütung für mehrjährige Tätigkeit und ohne 
+  /* Lohnsteuer für sonstige Bezüge (ohne Vergütung für mehrjährige Tätigkeit und ohne
    tarifermäßigt zu besteuernde Vorteile bei Vermögensbeteiligungen) in Cent
    Hinweis: Negativbeträge, die aus nicht zu besteuernden Vorteilen bei Vermögensbeteiligungen
-   (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern LSTLZZ (maximal bis 0). Der 
-   Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen im Rahmen der 
+   (§ 19a Absatz 1 Satz 4 EStG) resultieren, mindern LSTLZZ (maximal bis 0). Der
+   Sonderausgabenabzug für tatsächlich erbrachte Vorsorgeaufwendungen im Rahmen der
    Veranlagung zur Einkommensteuer bleibt unberührt. */
   public var STS : BigDecimal  = BigDecimal(0)
   /* Lohnsteuer für die Vergütung für mehrjährige Tätigkeit und der tarifermäßigt zu besteuernden
@@ -271,10 +271,10 @@ public class Lohnsteuer2023AbJuliBig  {
    steuerbescheinigungsprogramms zu addieren; hinzuzurechnen sind auch die Ausgabewerte
    VKVSONST */
   public var VKVLZZ : BigDecimal  = BigDecimal(0)
-  /* Für den Lohnzahlungszeitraum berücksichtigte Beiträge des Arbeitnehmers 
-   zur privaten Basis-Krankenversicherung und privaten Pflege-Pflichtversicherung (ggf. 
+  /* Für den Lohnzahlungszeitraum berücksichtigte Beiträge des Arbeitnehmers
+   zur privaten Basis-Krankenversicherung und privaten Pflege-Pflichtversicherung (ggf.
    auch die Mindestvorsorgepauschale) in Cent bei sonstigen Bezügen. Der Ausgabewert kann
-   auch negativ sein. Für tarifermäßigt zu besteuernde Vergütungen für mehrjährige 
+   auch negativ sein. Für tarifermäßigt zu besteuernde Vergütungen für mehrjährige
    Tätigkeiten enthält der PAP keinen entsprechenden Ausgabewert. */
   public var VKVSONST : BigDecimal  = BigDecimal(0)
   /* AUSGABEPARAMETER DBA */
@@ -285,13 +285,13 @@ public class Lohnsteuer2023AbJuliBig  {
   public var VFRBS1 : BigDecimal  = BigDecimal(0)
   /* Verbrauchter Freibetrag bei Berechnung der sonstigen Bezüge, in Cent */
   public var VFRBS2 : BigDecimal  = BigDecimal(0)
-  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE über 
+  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE über
    dem Grundfreibetrag bei der Berechnung des laufenden Arbeitslohns, in Cent */
   public var WVFRB : BigDecimal  = BigDecimal(0)
-  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE über dem Grundfreibetrag 
+  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE über dem Grundfreibetrag
    bei der Berechnung des voraussichtlichen Jahresarbeitslohns, in Cent */
   public var WVFRBO : BigDecimal  = BigDecimal(0)
-  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE 
+  /* Für die weitergehende Berücksichtigung des Steuerfreibetrags nach dem DBA Türkei verfügbares ZVE
    über dem Grundfreibetrag bei der Berechnung der sonstigen Bezüge, in Cent */
   public var WVFRBM : BigDecimal  = BigDecimal(0)
   /* INTERNE FELDER */
@@ -307,7 +307,7 @@ public class Lohnsteuer2023AbJuliBig  {
   /* Bemessungsgrundlage für Altersentlastungsbetrag in €, Cent
    (2 Dezimalstellen) */
   private var BMG: BigDecimal = BigDecimal(0)
-  /* Beitragsbemessungsgrenze in der gesetzlichen Krankenversicherung 
+  /* Beitragsbemessungsgrenze in der gesetzlichen Krankenversicherung
    und der sozialen Pflegeversicherung in Euro */
   private var BBGKVPV: BigDecimal = BigDecimal(0)
   /* allgemeine Beitragsbemessungsgrenze in der allgemeinen Renten-versicherung in Euro */
@@ -430,9 +430,9 @@ public class Lohnsteuer2023AbJuliBig  {
   /* Zwischenwert 2 bei der Berechnung der Vorsorgepauschale nach
    dem Alterseinkuenftegesetz in EURO, C (2 Dezimalstellen) */
   private var VSP2: BigDecimal = BigDecimal(0)
-  /* Vorsorgepauschale mit Teilbeträgen für die gesetzliche Kranken- und 
+  /* Vorsorgepauschale mit Teilbeträgen für die gesetzliche Kranken- und
    soziale Pflegeversicherung nach fiktiven Beträgen oder ggf. für die
-   private Basiskrankenversicherung und private Pflege-Pflichtversicherung 
+   private Basiskrankenversicherung und private Pflege-Pflichtversicherung
    in Euro, Cent (2 Dezimalstellen) */
   private var VSP3: BigDecimal = BigDecimal(0)
   /* Erster Grenzwert in Steuerklasse V/VI in Euro */
@@ -484,7 +484,7 @@ public class Lohnsteuer2023AbJuliBig  {
   private var ZZX: BigDecimal = BigDecimal(0)
   private var HOCH: BigDecimal = BigDecimal(0)
   private var VERGL: BigDecimal = BigDecimal(0)
-  /* Jahreswert der berücksichtigten Beiträge zur privaten Basis-Krankenversicherung und 
+  /* Jahreswert der berücksichtigten Beiträge zur privaten Basis-Krankenversicherung und
    privaten Pflege-Pflichtversicherung (ggf. auch die Mindestvorsorgepauschale) in Cent. */
   private var VKV: BigDecimal = BigDecimal(0)
   // MARK: constants
@@ -1117,7 +1117,7 @@ public class Lohnsteuer2023AbJuliBig  {
       if (STV.compareTo (BigDecimal.ZERO) == -1) {
         STV = BigDecimal.ZERO
       } else {
-        /* 
+        /*
          lt. PAP muss hier auf ganze EUR abgerundet werden.
          Allerdings muss auch hier der Wert in Cent vorgehalten werden,
          weshalb nach dem Aufrunden auf ganze EUR durch 'divide(ZAHL100, 0, BigDecimal.ROUND_DOWN)'
@@ -1160,7 +1160,7 @@ public class Lohnsteuer2023AbJuliBig  {
     WVFRBO = ((ZVE.subtract(GFB)).multiply(ZAHL100)).setScale(2, BigDecimal.ROUND_DOWN)
     if (WVFRBO.compareTo(BigDecimal.ZERO) == -1 ) {
       WVFRBO = BigDecimal.ZERO
-    } // end-if for: WVFRBO.compareTo(BigDecimal.ZERO) == -1 
+    } // end-if for: WVFRBO.compareTo(BigDecimal.ZERO) == -1
     LSTOSO = ST.multiply (ZAHL100)
   } // method MOSONST
   /* Sonderberechnung mit sonstige Bezüge für Berechnung bei sonstigen Bezügen oder Vergütung für mehrjährige Tätigkeit, PAP Seite 38 */
@@ -1216,7 +1216,21 @@ public class Lohnsteuer2023AbJuliBig  {
 } // type Lohnsteuer2023AbJuliBig
 
 /// BigDecimal implementation in Swift - see JavApi⁴Swift project
-public struct BigDecimal {
+public struct BigDecimal : CustomStringConvertible {
+  public var description: String {
+    get {
+      if self.roundingMode == BigDecimal.ROUND_UNSET {
+        return "\(self.value)"
+      }
+      let factor : Int = (pow (10,scale) as NSDecimalNumber).intValue
+      let quotiend : Double = Double(factor)
+      
+      let roundedSelf = Int (Double(Int(self.value * quotiend)) / quotiend)
+      
+      return "\(roundedSelf)"
+    }
+  }
+
   
   private var scale : Int = Int.max
   private var roundingMode : Int = ROUND_UNSET
