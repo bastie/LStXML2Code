@@ -26,7 +26,7 @@ open class SwiftEncoding : AbstractTreeEncoding {
     for (offset,name) in inputVars.keys.enumerated() {
       result.append("    ")
       let type = inputVars[name]!
-      result.append("_ \(name) : \(type) = \(type)()")
+      result.append("\(name) : \(type) = \(type)()")
       if offset + 1 < inputVars.count {
         result.append(",\n")
       }

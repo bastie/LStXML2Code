@@ -8,7 +8,7 @@ import LStXML2Code
 @main
 public struct BMF2Code {
   
-  public static let VERSION = "0.2.0"
+  public static let VERSION = "0.2.1"
   
   
   // MARK: main entry point
