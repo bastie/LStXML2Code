@@ -23,7 +23,7 @@ public struct BMF2Code {
       let xmls = "Tests/LStXML2CodeTests/xml/"
       let test = "Lohnsteuer2023AbJuli.xml"
       let lang = "Java"
-      cmdLineArgs = [CommandLine.arguments[0],"lang=\(lang)","\(documents)\(project)\(xmls)\(test)"]
+      cmdLineArgs = [CommandLine.arguments[0],"--lang=\(lang)","\(documents)\(project)\(xmls)\(test)"]
     }
 #endif
     let prg = BMF2Code()
