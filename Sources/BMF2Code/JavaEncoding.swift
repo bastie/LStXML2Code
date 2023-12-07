@@ -63,7 +63,12 @@ open class JavaEncoding : AbstractTreeEncoding {
       let modifier = "public"
       let name = node.getAttribute(name: "name")!
       let type = node.getAttribute(name: "type")!
-      let defaultValueAdding = nil != node.getAttribute(name: "default") ? " = \(node.getAttribute(name: "default")!)" : ""
+      var defaultValueAdding = nil != node.getAttribute(name: "default") ? " = \(node.getAttribute(name: "default")!)" : ""
+      if type == "BigDecimal" {
+        if defaultValueAdding == "" {
+          defaultValueAdding = " = new BigDecimal(0)"
+        }
+      }
       let terminator = ";"
       output.append("\(modifier) \(type) \(name)\(defaultValueAdding)\(terminator)")
       result.append("\(output)\n")

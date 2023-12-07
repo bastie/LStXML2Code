@@ -54,7 +54,7 @@ public struct BMF2Code {
       case "java" : AbstractTreeEncoder(encoding:JavaEncoding())
       case "swift": AbstractTreeEncoder(encoding:SwiftEncoding())
       default:
-        AbstractTreeEncoder(encoding:JavaEncoding())
+        AbstractTreeEncoder(encoding:SwiftEncoding())
       }
       let encodedData = try encoder.encode(ast)
       if let encodedString = String (data: encodedData, encoding: .utf8) {
