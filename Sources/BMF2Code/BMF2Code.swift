@@ -6,12 +6,14 @@ import Foundation
 import LStXML2Code
 
 @main
+/// Quelletxtgenerator zur Nutzung des durch das BMF bereitgestellten Pseudo-Quelltext zur Berechnung der Lohnsteuerabzüge bei der Einkommensteuer.
 public struct BMF2Code {
-  
-  public static let VERSION = "0.2.1"
+  /// Interne Version
+  public static let VERSION = "1.0.0"
   
   
   // MARK: main entry point
+  /// Einsprungspunkt der Kommandozeilenanwendung
   static func main () {
     var cmdLineArgs = CommandLine.arguments
 #if DEBUG
@@ -78,6 +80,11 @@ public struct BMF2Code {
   
   // MARK: handling argument
   // handwritten parameter evaluation
+  /// Evaluierung der Parameter
+  /// - Parameters:
+  /// - Parameter arguments die Argumente to verarbeitet werden sollen
+  /// - Parameter reversedCall Information, ob die Funktion sich selbst aufgerufen hat
+  /// - Returns lediglich die benötigten Parameter zur weiteren Verarbeitung
   func evalArgs (arguments : [String], reversedCall : Bool = false) -> [String:String] {
     let supportedLang = ["java", "swift"]
     let supportedLanguages = "\(supportedLang)".replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "").replacingOccurrences(of: "\"", with: "")

@@ -5,6 +5,11 @@
 import LStXML2Code
 import Foundation
 
+
+/// Java8 Encoding
+///
+/// Das ``JavaEncoding`` nutzt den durch das [ITZBund](https://www.itzbund.de) verwendete
+/// Java8 Quelltext in den exec Anweisungen.
 open class JavaEncoding : AbstractTreeEncoding {
   public func encode(_ value: AbstractTree) throws -> Data? {
     
@@ -25,6 +30,9 @@ open class JavaEncoding : AbstractTreeEncoding {
   var result = ""
   
   var intend = 0
+  
+  /// Durchlaufen des Baumes zur Quelltextgenerierung
+  /// - Parameter node der aktuell zu betrachtende Baumknoten
   open func traverse (node : Node) {
     var output = ""
     for _ in 0..<intend {
@@ -214,8 +222,4 @@ open class JavaEncoding : AbstractTreeEncoding {
     }
     
   }
-
-  
 }
-
-

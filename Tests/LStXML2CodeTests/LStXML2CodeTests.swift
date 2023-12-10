@@ -1,10 +1,13 @@
 import XCTest
 @testable import LStXML2Code
 
+import JavApi
+
 final class LStXML2CodeTests: XCTestCase {
     func testExample() throws {
-      let calculator = Lohnsteuer2023AbJuliBig(LZZ: 1, STKL : 1, RE4:BigDecimal(2500000))
+      let calculator = Lohnsteuer2023AbJuliBig(LZZ: 1,RE4: java.math.BigDecimal(2500000),STKL: 1)
       calculator.MAIN()
+      /*
       print (
       """
       BK       = \(calculator.BK)
@@ -25,6 +28,27 @@ final class LStXML2CodeTests: XCTestCase {
       WVFRBO   = \(calculator.WVFRBO)
       WVFRBM   = \(calculator.WVFRBM)
       """)
+      */
+      
+      // must be set
+      XCTAssertEqual(calculator.VFRB, 123000)
+      XCTAssertEqual(calculator.LSTLZZ, 176700)
+      XCTAssertEqual(calculator.WVFRB, 834700)
+      // must be zero
+      XCTAssertEqual(calculator.BK, 0)
+      XCTAssertEqual(calculator.BKS, 0)
+      XCTAssertEqual(calculator.BKV, 0)
+      XCTAssertEqual(calculator.SOLZLZZ, 0)
+      XCTAssertEqual(calculator.SOLZS, 0)
+      XCTAssertEqual(calculator.SOLZV, 0)
+      XCTAssertEqual(calculator.STS, 0)
+      XCTAssertEqual(calculator.STV, 0)
+      XCTAssertEqual(calculator.VKVLZZ, 0)
+      XCTAssertEqual(calculator.VKVSONST, 0)
+      XCTAssertEqual(calculator.VFRBS1, 0)
+      XCTAssertEqual(calculator.VFRBS2, 0)
+      XCTAssertEqual(calculator.WVFRBO, 0)
+      XCTAssertEqual(calculator.WVFRBM, 0)
     }
 }
 

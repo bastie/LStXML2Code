@@ -1,79 +1,83 @@
-/// Generated with BMF2Code v0.2.1 @2023-12-07 16:10:06 +0000
+/// Generated with BMF2Code v1.0.0 @2023-12-10 12:27:59 +0000
 
 import Foundation
+import JavApi
+
+public typealias BigDecimal = java.math.BigDecimal
+
 public class Lohnsteuer2023AbJuliBig  {
   
   public init (
+    AJAHR : Int = Int(),
+    ALTER1 : Int = Int(),
+    ENTSCH : BigDecimal = BigDecimal(),
+    JFREIB : BigDecimal = BigDecimal(),
+    JHINZU : BigDecimal = BigDecimal(),
+    JRE4 : BigDecimal = BigDecimal(),
+    JRE4ENT : BigDecimal = BigDecimal(),
+    JVBEZ : BigDecimal = BigDecimal(),
+    KRV : Int = Int(),
+    KVZ : BigDecimal = BigDecimal(),
+    LZZ : Int = Int(),
+    LZZFREIB : BigDecimal = BigDecimal(),
+    LZZHINZU : BigDecimal = BigDecimal(),
+    MBV : BigDecimal = BigDecimal(),
+    PKPV : BigDecimal = BigDecimal(),
+    PKV : Int = Int(),
+    PVS : Int = Int(),
+    PVZ : Int = Int(),
+    R : Int = Int(),
+    RE4 : BigDecimal = BigDecimal(),
+    SONSTB : BigDecimal = BigDecimal(),
+    SONSTENT : BigDecimal = BigDecimal(),
+    STERBE : BigDecimal = BigDecimal(),
+    STKL : Int = Int(),
+    VBEZ : BigDecimal = BigDecimal(),
+    VBEZM : BigDecimal = BigDecimal(),
+    VBEZS : BigDecimal = BigDecimal(),
+    VBS : BigDecimal = BigDecimal(),
+    VJAHR : Int = Int(),
+    VKAPA : BigDecimal = BigDecimal(),
     VMT : BigDecimal = BigDecimal(),
     ZKF : BigDecimal = BigDecimal(),
-    PVZ : Int = Int(),
     ZMVB : Int = Int(),
-    VBEZ : BigDecimal = BigDecimal(),
-    LZZ : Int = Int(),
-    STKL : Int = Int(),
-    SONSTENT : BigDecimal = BigDecimal(),
-    JFREIB : BigDecimal = BigDecimal(),
-    PKPV : BigDecimal = BigDecimal(),
-    RE4 : BigDecimal = BigDecimal(),
-    PKV : Int = Int(),
-    JHINZU : BigDecimal = BigDecimal(),
-    KVZ : BigDecimal = BigDecimal(),
-    SONSTB : BigDecimal = BigDecimal(),
-    ENTSCH : BigDecimal = BigDecimal(),
-    R : Int = Int(),
-    JVBEZ : BigDecimal = BigDecimal(),
-    VBS : BigDecimal = BigDecimal(),
-    JRE4 : BigDecimal = BigDecimal(),
     af : Int = Int(),
-    LZZFREIB : BigDecimal = BigDecimal(),
-    MBV : BigDecimal = BigDecimal(),
-    JRE4ENT : BigDecimal = BigDecimal(),
-    AJAHR : Int = Int(),
-    VKAPA : BigDecimal = BigDecimal(),
-    VBEZS : BigDecimal = BigDecimal(),
-    STERBE : BigDecimal = BigDecimal(),
-    f : Double = Double(),
-    ALTER1 : Int = Int(),
-    KRV : Int = Int(),
-    LZZHINZU : BigDecimal = BigDecimal(),
-    VBEZM : BigDecimal = BigDecimal(),
-    PVS : Int = Int(),
-    VJAHR : Int = Int()) {
-      self.VMT = VMT
-      self.ZKF = ZKF
-      self.PVZ = PVZ
-      self.ZMVB = ZMVB
-      self.VBEZ = VBEZ
-      self.LZZ = LZZ
-      self.STKL = STKL
-      self.SONSTENT = SONSTENT
-      self.JFREIB = JFREIB
-      self.PKPV = PKPV
-      self.RE4 = RE4
-      self.PKV = PKV
-      self.JHINZU = JHINZU
-      self.KVZ = KVZ
-      self.SONSTB = SONSTB
-      self.ENTSCH = ENTSCH
+    f : Double = Double()) {
       self.R = R
-      self.JVBEZ = JVBEZ
+      self.ZMVB = ZMVB
+      self.LZZHINZU = LZZHINZU
+      self.PVZ = PVZ
+      self.JHINZU = JHINZU
+      self.LZZ = LZZ
+      self.ENTSCH = ENTSCH
+      self.VBEZS = VBEZS
       self.VBS = VBS
-      self.JRE4 = JRE4
-      self.af = af
-      self.LZZFREIB = LZZFREIB
-      self.MBV = MBV
       self.JRE4ENT = JRE4ENT
       self.AJAHR = AJAHR
-      self.VKAPA = VKAPA
-      self.VBEZS = VBEZS
-      self.STERBE = STERBE
       self.f = f
-      self.ALTER1 = ALTER1
-      self.KRV = KRV
-      self.LZZHINZU = LZZHINZU
-      self.VBEZM = VBEZM
+      self.af = af
       self.PVS = PVS
+      self.VBEZ = VBEZ
+      self.ALTER1 = ALTER1
+      self.LZZFREIB = LZZFREIB
+      self.JVBEZ = JVBEZ
+      self.JRE4 = JRE4
+      self.RE4 = RE4
+      self.SONSTB = SONSTB
+      self.STKL = STKL
+      self.PKV = PKV
+      self.VMT = VMT
+      self.STERBE = STERBE
+      self.VBEZM = VBEZM
+      self.ZKF = ZKF
+      self.SONSTENT = SONSTENT
       self.VJAHR = VJAHR
+      self.JFREIB = JFREIB
+      self.MBV = MBV
+      self.KVZ = KVZ
+      self.KRV = KRV
+      self.PKPV = PKPV
+      self.VKAPA = VKAPA
     }
   
   // MARK: Variables
@@ -1214,116 +1218,3 @@ public class Lohnsteuer2023AbJuliBig  {
     ST = ST.multiply (BigDecimal.valueOf (KZTAB))
   } // method UPTAB23
 } // type Lohnsteuer2023AbJuliBig
-
-/// BigDecimal implementation in Swift - see JavApi⁴Swift project
-public struct BigDecimal : CustomStringConvertible {
-  public var description: String {
-    get {
-      if self.roundingMode == BigDecimal.ROUND_UNSET {
-        return "\(self.value)"
-      }
-      let factor : Int = (pow (10,scale) as NSDecimalNumber).intValue
-      let quotiend : Double = Double(factor)
-      
-      let roundedSelf = Int (Double(Int(self.value * quotiend)) / quotiend)
-      
-      return "\(roundedSelf)"
-    }
-  }
-
-  
-  private var scale : Int = Int.max
-  private var roundingMode : Int = ROUND_UNSET
-  
-  public static let ZERO = BigDecimal(0.0)
-  public static let ONE = BigDecimal(1.0)
-  public static let ROUND_UP = 0
-  public static let ROUND_DOWN = 1
-  public static let ROUND_UNSET = -1
-  
-  private var value : Double
-  public init (_ newValue : Double = 0.0) {
-    self.value = newValue
-  }
-  public init (_ newValue : Int) {
-    self.value = Double(newValue)
-  }
-  public init (_ newValue : Int64) {
-    self.value = Double(newValue)
-  }
-  
-  public static func valueOf (_ newValue : Int) -> BigDecimal {
-    return BigDecimal(newValue)
-  }
-  public static func valueOf (_ newValue : Int64) -> BigDecimal {
-    return BigDecimal(newValue)
-  }
-  public static func valueOf (_ newValue : Double) -> BigDecimal {
-    return BigDecimal(newValue)
-  }
-  
-  public func subtract (_ bd : BigDecimal) -> BigDecimal {
-    let value : Double = self.value - bd.value
-    var result = BigDecimal(value)
-    result.scale = self.scale
-    result.roundingMode = self.roundingMode
-    return result
-  }
-  
-  public func multiply (_ bd : BigDecimal) -> BigDecimal{
-    let value : Double = self.value * bd.value
-    var result = BigDecimal(value)
-    result.scale = self.scale
-    result.roundingMode = self.roundingMode
-    return result
-  }
-  public func divide (_ bd : BigDecimal) -> BigDecimal{
-    let value : Double = self.value / bd.value
-    var result = BigDecimal(value)
-    result.scale = max(self.scale,bd.scale)
-    result.roundingMode = self.roundingMode
-    return result
-  }
-  public func divide (_ bd : BigDecimal, _ accuracy : Int, _ round : Int) -> BigDecimal{
-    let value : Double = self.value / bd.value
-    var result = BigDecimal(value)
-    result.scale = self.scale
-    result.roundingMode = self.roundingMode
-    return result
-  }
-  public func add (_ bd : BigDecimal) -> BigDecimal{
-    let value : Double = self.value + bd.value
-    var result = BigDecimal(value)
-    result.scale = self.scale
-    result.roundingMode = self.roundingMode
-    return result
-  }
-  public func setScale (_ newScale : Int, _ roundingMode : Int = BigDecimal.ROUND_UNSET) -> BigDecimal {
-    var result = BigDecimal(self.value)
-    result.scale = newScale
-    result.roundingMode = roundingMode
-    return result
-  }
-  
-  public func compareTo (_ bg : BigDecimal) -> Int {
-    if self.roundingMode == BigDecimal.ROUND_UNSET && bg.roundingMode == BigDecimal.ROUND_UNSET {
-      if self.value == bg.value {return 0}
-      if self.value > bg.value {return 1}
-      return -1
-    }
-    let newScale = max (self.scale, bg.scale)
-    let factor : Int = (pow (10,newScale) as NSDecimalNumber).intValue
-    let quotiend : Double = Double(factor)
-    
-    let roundedSelf = Int (Double(Int(self.value * quotiend)) / quotiend)
-    let roundedBg = Int (Double(Int(bg.value * quotiend)) / quotiend)
-    
-    if roundedSelf == roundedBg {return 0}
-    if roundedSelf > roundedBg {return 1}
-    return -1
-  }
-  
-  public func longValue () -> Int64 {
-    return Int64(self.value)
-  }
-}

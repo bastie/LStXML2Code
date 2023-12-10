@@ -5,6 +5,10 @@
 import LStXML2Code
 import Foundation
 
+
+/// ``SwiftEncoding`` unter Verwendung der [JavApi⁴Swift](https://github.com/bastie/JavApi4Swift) Version 0.7.3 oder höher
+///
+/// Basis sind die Java8 Anweisungen die das [ITZBund](https://www.itzbund.de) verwendet und durch die **JavApi⁴Swift** abgebildet werden.
 open class SwiftEncoding : AbstractTreeEncoding {
   public func encode(_ value: AbstractTree) throws -> Data? {
     
@@ -13,17 +17,21 @@ open class SwiftEncoding : AbstractTreeEncoding {
           /// Generated with BMF2Code v\(BMF2Code.VERSION) @\(Date())
           
           import Foundation
+          import JavApi
+          
+          public typealias BigDecimal = java.math.BigDecimal
+          
           
           """)
     traverse(node: root)
     
-    result.append (getAdditionalTypes())
+    // not good but work - modify source after generation
     
     // add initalizer
     let parts = result.split(separator: "{",maxSplits: 1)
     result = "\(parts[0]) {\n\n"
     result.append("  public init (\n")
-    for (offset,name) in inputVars.keys.enumerated() {
+    for (offset,name) in Array(inputVars.keys).sorted(by: {$0 < $1}).enumerated() {
       result.append("    ")
       let type = inputVars[name]!
       result.append("\(name) : \(type) = \(type)()")
@@ -39,7 +47,6 @@ open class SwiftEncoding : AbstractTreeEncoding {
     }
     result.append("}")
     result.append("\n\(parts[1])")
-    
     
     let asString = result //"\(value.getRoot())"
     return asString.data(using: .utf8)
@@ -311,118 +318,4 @@ open class SwiftEncoding : AbstractTreeEncoding {
     }
     return swiftType
   }
-
-  public func getAdditionalTypes() -> String {
-    var result = ""
-    // MARK: additional Type BigInteger
-    result.append(
-    """
-    
-    /// BigDecimal implementation in Swift - see JavApi⁴Swift project
-    public struct BigDecimal : CustomStringConvertible {
-    
-      private var scale : Int = Int.max
-      private var roundingMode : Int = ROUND_UNSET
-    
-      public static let ZERO = BigDecimal(0.0)
-      public static let ONE = BigDecimal(1.0)
-      public static let ROUND_UP = 0
-      public static let ROUND_DOWN = 1
-      public static let ROUND_UNSET = -1
-
-      private var value : Double
-      public init (_ newValue : Double = 0.0) {
-        self.value = newValue
-      }
-      public init (_ newValue : Int) {
-        self.value = Double(newValue)
-      }
-      public init (_ newValue : Int64) {
-        self.value = Double(newValue)
-      }
-
-      public static func valueOf (_ newValue : Int) -> BigDecimal {
-        return BigDecimal(newValue)
-      }
-      public static func valueOf (_ newValue : Int64) -> BigDecimal {
-        return BigDecimal(newValue)
-      }
-      public static func valueOf (_ newValue : Double) -> BigDecimal {
-        return BigDecimal(newValue)
-      }
-    
-      public func subtract (_ bd : BigDecimal) -> BigDecimal {
-        let value : Double = self.value - bd.value
-        var result = BigDecimal(value)
-        result.scale = self.scale
-        result.roundingMode = self.roundingMode
-        return result
-      }
-      
-      public func multiply (_ bd : BigDecimal) -> BigDecimal{
-        let value : Double = self.value * bd.value
-        var result = BigDecimal(value)
-        result.scale = self.scale
-        result.roundingMode = self.roundingMode
-        return result
-      }
-      public func divide (_ bd : BigDecimal) -> BigDecimal{
-        let value : Double = self.value / bd.value
-        var result = BigDecimal(value)
-        result.scale = max(self.scale,bd.scale)
-        result.roundingMode = self.roundingMode
-        return result
-      }
-      public func divide (_ bd : BigDecimal, _ accuracy : Int, _ round : Int) -> BigDecimal{
-        let value : Double = self.value / bd.value
-        var result = BigDecimal(value)
-        result.scale = self.scale
-        result.roundingMode = self.roundingMode
-        return result
-      }
-      public func add (_ bd : BigDecimal) -> BigDecimal{
-        let value : Double = self.value + bd.value
-        var result = BigDecimal(value)
-        result.scale = self.scale
-        result.roundingMode = self.roundingMode
-        return result
-      }
-      public func setScale (_ newScale : Int, _ roundingMode : Int = BigDecimal.ROUND_UNSET) -> BigDecimal {
-        var result = BigDecimal(self.value)
-        result.scale = newScale
-        result.roundingMode = roundingMode
-        return result
-      }
-
-      public func compareTo (_ bg : BigDecimal) -> Int {
-        if self.roundingMode == BigDecimal.ROUND_UNSET && bg.roundingMode == BigDecimal.ROUND_UNSET {
-          if self.value == bg.value {return 0}
-          if self.value > bg.value {return 1}
-          return -1
-        }
-        let newScale = max (self.scale, bg.scale)
-        let factor : Int = (pow (10,newScale) as NSDecimalNumber).intValue
-        let quotiend : Double = Double(factor)
-        
-        let roundedSelf = Int (Double(Int(self.value * quotiend)) / quotiend)
-        let roundedBg = Int (Double(Int(bg.value * quotiend)) / quotiend)
-
-        if roundedSelf == roundedBg {return 0}
-        if roundedSelf > roundedBg {return 1}
-        return -1
-      }
-    
-      public func longValue () -> Int64 {
-        return Int64(self.value)
-      }
-    }
-    """)
-    
-    
-    // ----------------
-    return result
-  }
-
 }
-
-

@@ -8,9 +8,9 @@ Die Architektur ist darauf ausgelegt die unterliegende XML Struktur der eingeles
 
 ### Überführen des XML in eine Struktur
 
-Swift unterstützt mit dem Protokoll `Codable` das (nicht ganz so) einfache Serialisieren und Deserialisieren von mehr oder weniger komplexen Strukturen. Da das Eingabeformat ein valides XML Dokument ist nutzen wir zum Einlesen statt einem `Decoder` den SAX-Parser ``PAPXmlParser``.
+Swift unterstützt mit dem Protokoll `Codable` das (nicht ganz so) einfache Serialisieren und Deserialisieren von mehr oder weniger komplexen Strukturen. Da das Eingabeformat ein valides XML Dokument ist nutzen wir zum Einlesen statt einem `Decoder` den SAX-Parser `PAPXmlParser`.
 
-Aufgabe des ``PAPXmlParser`` ist es die XML Struktur in eine Baumstruktur zu überführen, den ``PAPTree``. Der ``PAPTree`` ist als interne IO-Struktur nach außen nicht sichtbar sondern wird über die Transformation in den ``AbstractTree`` überführt. Der ``PAPTree`` implemetiert hierfür das Protokoll `Encodable`. Dies geschieht über die Implementation der Schnittstelle `Encodable` in ``AbstractTreeEncoder``, welche jedoch die eigentlich Aufgabe in die Implementierung ``AbstractTreeEncoding`` delegiert.
+Aufgabe des `PAPXmlParser` ist es die XML Struktur in eine Baumstruktur zu überführen, den ``PAPTree``. Der ``PAPTree`` ist als interne IO-Struktur nach außen nicht sichtbar sondern wird über die Transformation in den ``AbstractTree`` überführt. Der ``PAPTree`` implemetiert hierfür das Protokoll `Encodable`. Dies geschieht über die Implementation der Schnittstelle `Encodable` in ``AbstractTreeEncoder``, welche jedoch die eigentlich Aufgabe in die Implementierung ``AbstractTreeEncoding`` delegiert.
 
 **Nur die ``AbstractTreeEncoding`` Implementation bedarf einer Anpassung, bei nicht strukturellen Änderungen dess XML.**
 
