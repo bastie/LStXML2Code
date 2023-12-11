@@ -279,11 +279,13 @@ open class SwiftEncoding : AbstractTreeEncoding {
       // decision THEN is integrated in IF with open and close brackes
       break;
     case "ELSE" : // else is a block
-      var beforeBlock = output
-      
-      beforeBlock.append("} else {") // close the THEN and open the ELSE
-      result.append("\(beforeBlock)\n")
-      
+      var beforeBlockCloseIf = output
+      var beforeBlockElse = output
+      beforeBlockCloseIf.append("}")
+      beforeBlockElse.append("else {") // close the THEN and open the ELSE
+      result.append("\(beforeBlockCloseIf)\n")
+      result.append("\(beforeBlockElse)\n")
+
       for child in node.getChilds() {
         intend += 1
         traverse(node: child)

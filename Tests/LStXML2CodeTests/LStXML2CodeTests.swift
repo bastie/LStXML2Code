@@ -6,10 +6,12 @@ import JavApi
 final class LStXML2CodeTests: XCTestCase {
   
   func testAll () throws {
-    try self._testBMFSample()       // Coverage: 50,6%
-    try self._testKRV1()            // Coverage: 51,0%
-    try self._testKRV2()            // Coverage: 51,0%
+    try self._testBMFSample()       // Coverage: 49,5%
+    try self._testKRV1()            // Coverage: 49,7%
+    try self._testKRV2()            // Coverage: 50,1%
     try self._testAJAHR1KRV2()      // Coverage: 52,2%
+    /*
+     */
   }
   
   /// Dieser Test beinhaltet das Beispiel von der Webseite [Eingangsinterface des BMF Steuerrechner](https://www.bmf-steuerrechner.de/interface/einganginterface.xhtml)

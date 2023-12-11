@@ -1,4 +1,4 @@
-/// Generated with BMF2Code v1.0.1 @2023-12-11 07:01:03 +0000
+/// Generated with BMF2Code v1.0.2 @2023-12-11 11:12:56 +0000
 
 import Foundation
 import JavApi
@@ -34,32 +34,32 @@ public class Lohnsteuer2023AbJuliBig  {
     VMT : BigDecimal = BigDecimal(),
     ZKF : BigDecimal = BigDecimal(),
     ZMVB : Int = Int()) {
-      self.JVBEZ = JVBEZ
-      self.JFREIB = JFREIB
-      self.VKAPA = VKAPA
-      self.R = R
-      self.VBEZM = VBEZM
-      self.STERBE = STERBE
-      self.LZZHINZU = LZZHINZU
-      self.VBEZ = VBEZ
-      self.ZMVB = ZMVB
-      self.STKL = STKL
-      self.KVZ = KVZ
-      self.ZKF = ZKF
-      self.VBEZS = VBEZS
-      self.RE4 = RE4
-      self.LZZFREIB = LZZFREIB
-      self.VJAHR = VJAHR
-      self.VBS = VBS
-      self.AJAHR = AJAHR
-      self.SONSTB = SONSTB
       self.VMT = VMT
-      self.JHINZU = JHINZU
+      self.VBS = VBS
+      self.LZZFREIB = LZZFREIB
+      self.STKL = STKL
+      self.STERBE = STERBE
+      self.ZKF = ZKF
       self.KRV = KRV
-      self.LZZ = LZZ
-      self.MBV = MBV
+      self.RE4 = RE4
+      self.R = R
+      self.VBEZS = VBEZS
+      self.KVZ = KVZ
+      self.VBEZ = VBEZ
       self.ALTER1 = ALTER1
+      self.LZZ = LZZ
+      self.JVBEZ = JVBEZ
+      self.MBV = MBV
+      self.ZMVB = ZMVB
+      self.VKAPA = VKAPA
       self.JRE4 = JRE4
+      self.VJAHR = VJAHR
+      self.VBEZM = VBEZM
+      self.AJAHR = AJAHR
+      self.LZZHINZU = LZZHINZU
+      self.SONSTB = SONSTB
+      self.JHINZU = JHINZU
+      self.JFREIB = JFREIB
     }
   
   // MARK: Variables
@@ -515,7 +515,8 @@ public class Lohnsteuer2023AbJuliBig  {
       if (KRV == 0) {
         BBGRV = BigDecimal(87600)
         /* Geändert für 2023 */
-      } else {
+      }
+      else {
         BBGRV = BigDecimal(85200)
         /* Geändert für 2023 */
       } // end-if for: KRV == 0
@@ -523,7 +524,8 @@ public class Lohnsteuer2023AbJuliBig  {
       /* Neu 2019 */
       TBSVORV = BigDecimal.valueOf(1.00)
       /* Geändert für 2023 */
-    } else {
+    }
+    else {
       /* Nichts zu tun */
     } // end-if for: KRV < 2
     BBGKVPV = BigDecimal(59850)
@@ -537,18 +539,21 @@ public class Lohnsteuer2023AbJuliBig  {
       if (PVS == 1) {
         PVSATZAN = BigDecimal.valueOf(0.021125)
         PVSATZAG = BigDecimal.valueOf(0.011125)
-      } else {
+      }
+      else {
         PVSATZAN = BigDecimal.valueOf(0.016125)
         PVSATZAG = BigDecimal.valueOf(0.016125)
       } // end-if for: PVS == 1
       if (PVZ == 1) {
         PVSATZAN = PVSATZAN.add(BigDecimal.valueOf(0.00475))
       } // end-if for: PVZ == 1
-    } else {
+    }
+    else {
       if (PVS == 1) {
         PVSATZAN = BigDecimal.valueOf(0.022)
         PVSATZAG = BigDecimal.valueOf(0.012)
-      } else {
+      }
+      else {
         PVSATZAN = BigDecimal.valueOf(0.017)
         PVSATZAG = BigDecimal.valueOf(0.017)
       } // end-if for: PVS == 1
@@ -571,19 +576,22 @@ public class Lohnsteuer2023AbJuliBig  {
       ZVBEZJ = VBEZ.divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
       JLFREIB = LZZFREIB.divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
       JLHINZU = LZZHINZU.divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
-    } else {
+    }
+    else {
       if (LZZ == 2) {
         ZRE4J = (RE4.multiply (ZAHL12)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
         ZVBEZJ = (VBEZ.multiply (ZAHL12)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
         JLFREIB = (LZZFREIB.multiply (ZAHL12)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
         JLHINZU = (LZZHINZU.multiply (ZAHL12)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         if (LZZ == 3) {
           ZRE4J = (RE4.multiply (ZAHL360)).divide (ZAHL700, 2, BigDecimal.ROUND_DOWN)
           ZVBEZJ = (VBEZ.multiply (ZAHL360)).divide (ZAHL700, 2, BigDecimal.ROUND_DOWN)
           JLFREIB = (LZZFREIB.multiply (ZAHL360)).divide (ZAHL700, 2, BigDecimal.ROUND_DOWN)
           JLHINZU = (LZZHINZU.multiply (ZAHL360)).divide (ZAHL700, 2, BigDecimal.ROUND_DOWN)
-        } else {
+        }
+        else {
           ZRE4J = (RE4.multiply (ZAHL360)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
           ZVBEZJ = (VBEZ.multiply (ZAHL360)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
           JLFREIB = (LZZFREIB.multiply (ZAHL360)).divide (ZAHL100, 2, BigDecimal.ROUND_DOWN)
@@ -602,13 +610,16 @@ public class Lohnsteuer2023AbJuliBig  {
       FVB = BigDecimal.ZERO
       FVBZSO = BigDecimal.ZERO
       FVBSO = BigDecimal.ZERO
-    } else {
+    }
+    else {
       if (VJAHR < 2006) {
         J = 1
-      } else {
+      }
+      else {
         if (VJAHR < 2040) {
           J = VJAHR - 2004
-        } else {
+        }
+        else {
           J = 36
         } // end-if for: VJAHR < 2040
       } // end-if for: VJAHR < 2006
@@ -616,7 +627,8 @@ public class Lohnsteuer2023AbJuliBig  {
         VBEZB = (VBEZM.multiply (BigDecimal.valueOf (ZMVB))).add (VBEZS)
         HFVB = TAB2[J].divide (ZAHL12).multiply (BigDecimal.valueOf (ZMVB))
         FVBZ = TAB3[J].divide (ZAHL12).multiply (BigDecimal.valueOf (ZMVB)).setScale (0, BigDecimal.ROUND_UP)
-      } else {
+      }
+      else {
         VBEZB = ((VBEZM.multiply (ZAHL12)).add (VBEZS)).setScale (2, BigDecimal.ROUND_DOWN)
         HFVB = TAB2[J]
         FVBZ = TAB3[J]
@@ -651,13 +663,16 @@ public class Lohnsteuer2023AbJuliBig  {
   private  func MRE4ALTE(){
     if (ALTER1 == 0) {
       ALTE = BigDecimal.ZERO
-    } else {
+    }
+    else {
       if (AJAHR < 2006) {
         K = 1
-      } else {
+      }
+      else {
         if (AJAHR < 2040) {
           K = AJAHR - 2004
-        } else {
+        }
+        else {
           K = 36
         } // end-if for: AJAHR < 2040
       } // end-if for: AJAHR < 2006
@@ -704,7 +719,8 @@ public class Lohnsteuer2023AbJuliBig  {
       MRE4ABZ ()
       MLSTJAHR ()
       JBMG = (ST.multiply(BigDecimal.valueOf(f))).setScale(0,BigDecimal.ROUND_DOWN)
-    } else {
+    }
+    else {
       JBMG = LSTJAHR
     } // end-if for: ZKF.compareTo(BigDecimal.ZERO) == 1
     MSOLZ ()
@@ -719,11 +735,13 @@ public class Lohnsteuer2023AbJuliBig  {
       if (ZVBEZ.compareTo (BigDecimal.ZERO) == 1) {
         if ((ZVBEZ.subtract (FVBZ)).compareTo (BigDecimal.valueOf (102)) == -1) {
           ANP = (ZVBEZ.subtract (FVBZ)).setScale (0, BigDecimal.ROUND_UP)
-        } else {
+        }
+        else {
           ANP = BigDecimal.valueOf (102)
         } // end-if for: (ZVBEZ.subtract (FVBZ)).compareTo (BigDecimal.valueOf (102)) == -1
       } // end-if for: ZVBEZ.compareTo (BigDecimal.ZERO) == 1
-    } else {
+    }
+    else {
       FVBZ = BigDecimal.valueOf (0)
       FVBZSO = BigDecimal.valueOf (0)
     } // end-if for: STKL < 6
@@ -732,7 +750,8 @@ public class Lohnsteuer2023AbJuliBig  {
         if (ZRE4.subtract(ZVBEZ).compareTo(BigDecimal.valueOf(1230)) == -1) {
           /* Geändert für 2023 */
           ANP = ANP.add(ZRE4).subtract(ZVBEZ).setScale(0,BigDecimal.ROUND_UP)
-        } else {
+        }
+        else {
           ANP = ANP.add(BigDecimal.valueOf(1230))
           /* Geändert für 2023 */
         } // end-if for: ZRE4.subtract(ZVBEZ).compareTo(BigDecimal.valueOf(1230)) == -1
@@ -743,29 +762,34 @@ public class Lohnsteuer2023AbJuliBig  {
       SAP = BigDecimal.valueOf (36)
       KFB = (ZKF.multiply (BigDecimal.valueOf (8952))).setScale (0, BigDecimal.ROUND_DOWN)
       /* Geändert für 2023 */
-    } else {
+    }
+    else {
       if (STKL == 2) {
         EFA = BigDecimal.valueOf (4260)
         /* Geändert für 2023 */
         SAP = BigDecimal.valueOf (36)
         KFB = (ZKF.multiply (BigDecimal.valueOf (8952))).setScale (0, BigDecimal.ROUND_DOWN)
         /* Geändert für 2023 */
-      } else {
+      }
+      else {
         if (STKL == 3) {
           KZTAB = 2
           SAP = BigDecimal.valueOf (36)
           KFB = (ZKF.multiply (BigDecimal.valueOf (8952))).setScale (0, BigDecimal.ROUND_DOWN)
           /* Geändert für 2023 */
-        } else {
+        }
+        else {
           if (STKL == 4) {
             SAP = BigDecimal.valueOf (36)
             KFB = (ZKF.multiply (BigDecimal.valueOf (4476))).setScale (0, BigDecimal.ROUND_DOWN)
             /* Geändert für 2023 */
-          } else {
+          }
+          else {
             if (STKL == 5) {
               SAP = BigDecimal.valueOf (36)
               KFB = BigDecimal.ZERO
-            } else {
+            }
+            else {
               KFB = BigDecimal.ZERO
             } // end-if for: STKL == 5
           } // end-if for: STKL == 4
@@ -780,13 +804,15 @@ public class Lohnsteuer2023AbJuliBig  {
     if (KENNVMT != 1) {
       ZVE = (ZRE4.subtract (ZTABFB).subtract (VSP)).setScale (2, BigDecimal.ROUND_DOWN)
       UPMLST ()
-    } else {
+    }
+    else {
       ZVE = (ZRE4.subtract (ZTABFB).subtract (VSP).subtract ((VMT).divide (ZAHL100)).subtract ((VKAPA).divide (ZAHL100))).setScale (2, BigDecimal.ROUND_DOWN)
       if (ZVE.compareTo (BigDecimal.ZERO) == -1) {
         ZVE = ZVE.add(VMT.divide(ZAHL100)).add(VKAPA.divide(ZAHL100)).divide(ZAHL5).setScale(2,BigDecimal.ROUND_DOWN)
         UPMLST ()
         ST = (ST.multiply (ZAHL5)).setScale (0, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         UPMLST ()
         STOVMT = ST
         ZVE = (ZVE.add(((VMT.add (VKAPA)).divide (ZAHL500)))).setScale (2, BigDecimal.ROUND_DOWN)
@@ -807,10 +833,12 @@ public class Lohnsteuer2023AbJuliBig  {
     if (PKV > 0) {
       if (VSP2.compareTo(VSP3) == 1) {
         VKV = VSP2.multiply(ZAHL100)
-      } else {
+      }
+      else {
         VKV = VSP3.multiply(ZAHL100)
       } // end-if for: VSP2.compareTo(VSP3) == 1
-    } else {
+    }
+    else {
       VKV = BigDecimal.ZERO
     } // end-if for: PKV > 0
   } // method UPVKV
@@ -825,13 +853,15 @@ public class Lohnsteuer2023AbJuliBig  {
     if (ZVE.compareTo (ZAHL1) == -1) {
       ZVE = BigDecimal.ZERO
       X = BigDecimal.ZERO
-    } else {
+    }
+    else {
       X = (ZVE.divide (BigDecimal.valueOf(KZTAB))).setScale (0, BigDecimal.ROUND_DOWN)
     } // end-if for: ZVE.compareTo (ZAHL1) == -1
     if (STKL < 5) {
       /* Änderung für 2023 */
       UPTAB23 ()
-    } else {
+    }
+    else {
       MST5_6 ()
     } // end-if for: STKL < 5
   } // method UPMLST
@@ -840,7 +870,8 @@ public class Lohnsteuer2023AbJuliBig  {
     if (KRV > 1) {
       /* &lt; = < &gt; = > */
       VSP1 = BigDecimal.ZERO
-    } else {
+    }
+    else {
       if (ZRE4VP.compareTo(BBGRV) == 1) {
         ZRE4VP = BBGRV
       } // end-if for: ZRE4VP.compareTo(BBGRV) == 1
@@ -850,7 +881,8 @@ public class Lohnsteuer2023AbJuliBig  {
     VSP2 = (ZRE4VP.multiply(BigDecimal.valueOf(0.12))).setScale(2,BigDecimal.ROUND_DOWN)
     if (STKL == 3) {
       VHB = BigDecimal.valueOf(3000)
-    } else {
+    }
+    else {
       VHB = BigDecimal.valueOf(1900)
     } // end-if for: STKL == 3
     if (VSP2.compareTo (VHB) == 1) {
@@ -870,13 +902,15 @@ public class Lohnsteuer2023AbJuliBig  {
     if (PKV > 0) {
       if (STKL == 6) {
         VSP3 = BigDecimal.ZERO
-      } else {
+      }
+      else {
         VSP3 = PKPV.multiply(ZAHL12).divide(ZAHL100)
         if (PKV == 2) {
           VSP3 = VSP3.subtract( ZRE4VP.multiply( KVSATZAG.add(PVSATZAG))).setScale(2,BigDecimal.ROUND_DOWN)
         } // end-if for: PKV == 2
       } // end-if for: STKL == 6
-    } else {
+    }
+    else {
       VSP3 = ZRE4VP.multiply(KVSATZAN.add(PVSATZAN)).setScale(2, BigDecimal.ROUND_DOWN)
     } // end-if for: PKV > 0
     VSP = VSP3.add(VSP1).setScale(0, BigDecimal.ROUND_UP)
@@ -890,10 +924,12 @@ public class Lohnsteuer2023AbJuliBig  {
       if (ZZX.compareTo (W3STKL5) == 1) {
         ST = (ST.add ((W3STKL5.subtract (W2STKL5)).multiply (BigDecimal.valueOf (0.42)))).setScale (0, BigDecimal.ROUND_DOWN)
         ST = (ST.add ((ZZX.subtract (W3STKL5)).multiply (BigDecimal.valueOf (0.45)))).setScale (0, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         ST = (ST.add ((ZZX.subtract (W2STKL5)).multiply (BigDecimal.valueOf (0.42)))).setScale (0, BigDecimal.ROUND_DOWN)
       } // end-if for: ZZX.compareTo (W3STKL5) == 1
-    } else {
+    }
+    else {
       ZX = ZZX
       UP5_6 ()
       if (ZZX.compareTo (W1STKL5) == 1) {
@@ -904,7 +940,8 @@ public class Lohnsteuer2023AbJuliBig  {
         /* Neuer Wert 2014 */
         if (HOCH.compareTo (VERGL) == -1) {
           ST = HOCH
-        } else {
+        }
+        else {
           ST = VERGL
         } // end-if for: HOCH.compareTo (VERGL) == -1
       } // end-if for: ZZX.compareTo (W1STKL5) == 1
@@ -924,7 +961,8 @@ public class Lohnsteuer2023AbJuliBig  {
     MIST = (ZX.multiply (BigDecimal.valueOf (0.14))).setScale (0, BigDecimal.ROUND_DOWN)
     if (MIST.compareTo (DIFF) == 1) {
       ST = MIST
-    } else {
+    }
+    else {
       ST = DIFF
     } // end-if for: MIST.compareTo (DIFF) == 1
   } // method UP5_6
@@ -941,14 +979,16 @@ public class Lohnsteuer2023AbJuliBig  {
       JW = SOLZJ.multiply (ZAHL100).setScale (0, BigDecimal.ROUND_DOWN)
       UPANTEIL ()
       SOLZLZZ = ANTEIL1
-    } else {
+    }
+    else {
       SOLZLZZ = BigDecimal.ZERO
     } // end-if for: JBMG.compareTo (SOLZFREI) == 1
     if (R > 0) {
       JW = JBMG.multiply (ZAHL100)
       UPANTEIL ()
       BK = ANTEIL1
-    } else {
+    }
+    else {
       BK = BigDecimal.ZERO
     } // end-if for: R > 0
   } // method MSOLZ
@@ -956,13 +996,16 @@ public class Lohnsteuer2023AbJuliBig  {
   private  func UPANTEIL(){
     if (LZZ == 1) {
       ANTEIL1 = JW
-    } else {
+    }
+    else {
       if (LZZ == 2) {
         ANTEIL1 = JW.divide (ZAHL12, 0, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         if (LZZ == 3) {
           ANTEIL1 = (JW.multiply (ZAHL7)).divide (ZAHL360, 0, BigDecimal.ROUND_DOWN)
-        } else {
+        }
+        else {
           ANTEIL1 = JW.divide (ZAHL360, 0, BigDecimal.ROUND_DOWN)
         } // end-if for: LZZ == 3
       } // end-if for: LZZ == 2
@@ -981,7 +1024,8 @@ public class Lohnsteuer2023AbJuliBig  {
       STS = BigDecimal.ZERO
       SOLZS = BigDecimal.ZERO
       BKS = BigDecimal.ZERO
-    } else {
+    }
+    else {
       MOSONST ()
       UPVKV ()
       VKVSONST = VKV
@@ -1013,7 +1057,8 @@ public class Lohnsteuer2023AbJuliBig  {
       if (MBV.compareTo(BigDecimal.ZERO) == 0) {
         /* MBV = 0 */
         /* absichtlich leer */
-      } else {
+      }
+      else {
         LSTLZZ = LSTLZZ.add(STS)
         if (LSTLZZ.compareTo(BigDecimal.ZERO) == -1) {
           /* LSTLZZ < 0 */
@@ -1032,12 +1077,14 @@ public class Lohnsteuer2023AbJuliBig  {
       } // end-if for: MBV.compareTo(BigDecimal.ZERO) == 0
       STS = BigDecimal.ZERO
       SOLZS = BigDecimal.ZERO
-    } else {
+    }
+    else {
       MSOLZSTS ()
     } // end-if for: STS.compareTo(BigDecimal.ZERO) == -1
     if (R > 0) {
       BKS = STS
-    } else {
+    }
+    else {
       BKS = BigDecimal.ZERO
     } // end-if for: R > 0
   } // method STSMIN
@@ -1046,28 +1093,32 @@ public class Lohnsteuer2023AbJuliBig  {
     if (ZKF.compareTo(BigDecimal.ZERO) == 1) {
       /* ZKF > 0 */
       SOLZSZVE = ZVE.subtract(KFB)
-    } else {
+    }
+    else {
       SOLZSZVE = ZVE
     } // end-if for: ZKF.compareTo(BigDecimal.ZERO) == 1
     if (SOLZSZVE.compareTo(BigDecimal.ONE) == -1) {
       /* SOLZSZVE < 1 */
       SOLZSZVE = BigDecimal.ZERO
       X = BigDecimal.ZERO
-    } else {
+    }
+    else {
       X = SOLZSZVE.divide(BigDecimal.valueOf(KZTAB), 0, BigDecimal.ROUND_DOWN)
     } // end-if for: SOLZSZVE.compareTo(BigDecimal.ONE) == -1
     if (STKL < 5) {
       /* STKL < 5 */
       /* Änderung für 2023 */
       UPTAB23 ()
-    } else {
+    }
+    else {
       MST5_6 ()
     } // end-if for: STKL < 5
     SOLZSBMG = ST.multiply(BigDecimal.valueOf(f)).setScale(0,BigDecimal.ROUND_DOWN)
     if (SOLZSBMG.compareTo(SOLZFREI) == 1) {
       /* SOLZSBMG > SOLZFREI */
       SOLZS = STS.multiply(BigDecimal.valueOf(5.5)).divide(ZAHL100, 0, BigDecimal.ROUND_DOWN)
-    } else {
+    }
+    else {
       SOLZS = BigDecimal.ZERO
     } // end-if for: SOLZSBMG.compareTo(SOLZFREI) == 1
   } // method MSOLZSTS
@@ -1080,7 +1131,8 @@ public class Lohnsteuer2023AbJuliBig  {
       if (LSTSO.compareTo (BigDecimal.ZERO) == 0) {
         MOSONST ()
         LST1 = LSTOSO
-      } else {
+      }
+      else {
         LST1 = LSTSO
       } // end-if for: LSTSO.compareTo (BigDecimal.ZERO) == 0
       VBEZBSO = STERBE.add (VKAPA)
@@ -1102,7 +1154,8 @@ public class Lohnsteuer2023AbJuliBig  {
       } // end-if for: LST3.compareTo (STV) == -1
       if (STV.compareTo (BigDecimal.ZERO) == -1) {
         STV = BigDecimal.ZERO
-      } else {
+      }
+      else {
         /*
          lt. PAP muss hier auf ganze EUR abgerundet werden.
          Allerdings muss auch hier der Wert in Cent vorgehalten werden,
@@ -1116,16 +1169,19 @@ public class Lohnsteuer2023AbJuliBig  {
       if (SOLZVBMG.compareTo(SOLZFREI) == 1) {
         /* SOLZVBMG > SOLZFREI */
         SOLZV = STV.multiply(BigDecimal.valueOf(5.5)).divide(ZAHL100, 0, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         SOLZV = BigDecimal.ZERO
       } // end-if for: SOLZVBMG.compareTo(SOLZFREI) == 1
       /* Ende Neu 2021 */
       if (R > 0) {
         BKV = STV
-      } else {
+      }
+      else {
         BKV = BigDecimal.ZERO
       } // end-if for: R > 0
-    } else {
+    }
+    else {
       STV = BigDecimal.ZERO
       SOLZV = BigDecimal.ZERO
       BKV = BigDecimal.ZERO
@@ -1166,7 +1222,8 @@ public class Lohnsteuer2023AbJuliBig  {
     /* Änderung für 2023 */
     if (X.compareTo(GFB.add(ZAHL1)) == -1) {
       ST = BigDecimal.ZERO
-    } else {
+    }
+    else {
       if (X.compareTo (BigDecimal.valueOf (16000)) == -1) {
         /* Geändert für 2023 */
         Y = (X.subtract(GFB)).divide(ZAHL10000, 6,BigDecimal.ROUND_DOWN)
@@ -1174,7 +1231,8 @@ public class Lohnsteuer2023AbJuliBig  {
         /* Geändert für 2023 */
         RW = RW.add (BigDecimal.valueOf (1400))
         ST = (RW.multiply (Y)).setScale (0, BigDecimal.ROUND_DOWN)
-      } else {
+      }
+      else {
         if (X.compareTo (BigDecimal.valueOf (62810)) == -1) {
           /* Geändert für 2023 */
           Y = (X.subtract (BigDecimal.valueOf (15999))).divide (ZAHL10000, 6, BigDecimal.ROUND_DOWN)
@@ -1185,12 +1243,14 @@ public class Lohnsteuer2023AbJuliBig  {
           RW = RW.multiply (Y)
           ST = (RW.add (BigDecimal.valueOf (966.53))).setScale (0, BigDecimal.ROUND_DOWN)
           /* Geändert für 2023 */
-        } else {
+        }
+        else {
           if (X.compareTo (BigDecimal.valueOf (277826)) == -1) {
             /* Geändert für 2022 */
             ST = ((X.multiply (BigDecimal.valueOf (0.42))).subtract (BigDecimal.valueOf (9972.98))).setScale (0, BigDecimal.ROUND_DOWN)
             /* Geändert für 2023 */
-          } else {
+          }
+          else {
             ST = ((X.multiply (BigDecimal.valueOf (0.45))).subtract (BigDecimal.valueOf (18307.73))).setScale (0, BigDecimal.ROUND_DOWN)
             /* Geändert für 2023 */
           } // end-if for: X.compareTo (BigDecimal.valueOf (277826)) == -1
@@ -1200,4 +1260,3 @@ public class Lohnsteuer2023AbJuliBig  {
     ST = ST.multiply (BigDecimal.valueOf (KZTAB))
   } // method UPTAB23
 } // type Lohnsteuer2023AbJuliBig
-
