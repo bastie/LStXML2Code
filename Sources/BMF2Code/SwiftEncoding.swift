@@ -106,7 +106,10 @@ open class SwiftEncoding : AbstractTreeEncoding {
       }
       
       // store for initalizer
-      self.inputVars [name] = type
+      // - BugFix: if default value exist, do not include in initalizer
+      if defaultValueAdding.count == 0 {
+        self.inputVars [name] = type
+      }
       
       output.append("\(modifier) var \(name) : \(type)\(defaultValueAdding)")
       result.append("\(output)\n")

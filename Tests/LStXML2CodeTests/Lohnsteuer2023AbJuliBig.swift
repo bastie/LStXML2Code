@@ -1,4 +1,4 @@
-/// Generated with BMF2Code v1.0.0 @2023-12-10 12:27:59 +0000
+/// Generated with BMF2Code v1.0.1 @2023-12-11 07:01:03 +0000
 
 import Foundation
 import JavApi
@@ -10,11 +10,9 @@ public class Lohnsteuer2023AbJuliBig  {
   public init (
     AJAHR : Int = Int(),
     ALTER1 : Int = Int(),
-    ENTSCH : BigDecimal = BigDecimal(),
     JFREIB : BigDecimal = BigDecimal(),
     JHINZU : BigDecimal = BigDecimal(),
     JRE4 : BigDecimal = BigDecimal(),
-    JRE4ENT : BigDecimal = BigDecimal(),
     JVBEZ : BigDecimal = BigDecimal(),
     KRV : Int = Int(),
     KVZ : BigDecimal = BigDecimal(),
@@ -22,14 +20,9 @@ public class Lohnsteuer2023AbJuliBig  {
     LZZFREIB : BigDecimal = BigDecimal(),
     LZZHINZU : BigDecimal = BigDecimal(),
     MBV : BigDecimal = BigDecimal(),
-    PKPV : BigDecimal = BigDecimal(),
-    PKV : Int = Int(),
-    PVS : Int = Int(),
-    PVZ : Int = Int(),
     R : Int = Int(),
     RE4 : BigDecimal = BigDecimal(),
     SONSTB : BigDecimal = BigDecimal(),
-    SONSTENT : BigDecimal = BigDecimal(),
     STERBE : BigDecimal = BigDecimal(),
     STKL : Int = Int(),
     VBEZ : BigDecimal = BigDecimal(),
@@ -40,44 +33,33 @@ public class Lohnsteuer2023AbJuliBig  {
     VKAPA : BigDecimal = BigDecimal(),
     VMT : BigDecimal = BigDecimal(),
     ZKF : BigDecimal = BigDecimal(),
-    ZMVB : Int = Int(),
-    af : Int = Int(),
-    f : Double = Double()) {
-      self.R = R
-      self.ZMVB = ZMVB
-      self.LZZHINZU = LZZHINZU
-      self.PVZ = PVZ
-      self.JHINZU = JHINZU
-      self.LZZ = LZZ
-      self.ENTSCH = ENTSCH
-      self.VBEZS = VBEZS
-      self.VBS = VBS
-      self.JRE4ENT = JRE4ENT
-      self.AJAHR = AJAHR
-      self.f = f
-      self.af = af
-      self.PVS = PVS
-      self.VBEZ = VBEZ
-      self.ALTER1 = ALTER1
-      self.LZZFREIB = LZZFREIB
+    ZMVB : Int = Int()) {
       self.JVBEZ = JVBEZ
-      self.JRE4 = JRE4
-      self.RE4 = RE4
-      self.SONSTB = SONSTB
-      self.STKL = STKL
-      self.PKV = PKV
-      self.VMT = VMT
-      self.STERBE = STERBE
-      self.VBEZM = VBEZM
-      self.ZKF = ZKF
-      self.SONSTENT = SONSTENT
-      self.VJAHR = VJAHR
       self.JFREIB = JFREIB
-      self.MBV = MBV
-      self.KVZ = KVZ
-      self.KRV = KRV
-      self.PKPV = PKPV
       self.VKAPA = VKAPA
+      self.R = R
+      self.VBEZM = VBEZM
+      self.STERBE = STERBE
+      self.LZZHINZU = LZZHINZU
+      self.VBEZ = VBEZ
+      self.ZMVB = ZMVB
+      self.STKL = STKL
+      self.KVZ = KVZ
+      self.ZKF = ZKF
+      self.VBEZS = VBEZS
+      self.RE4 = RE4
+      self.LZZFREIB = LZZFREIB
+      self.VJAHR = VJAHR
+      self.VBS = VBS
+      self.AJAHR = AJAHR
+      self.SONSTB = SONSTB
+      self.VMT = VMT
+      self.JHINZU = JHINZU
+      self.KRV = KRV
+      self.LZZ = LZZ
+      self.MBV = MBV
+      self.ALTER1 = ALTER1
+      self.JRE4 = JRE4
     }
   
   // MARK: Variables
@@ -1218,3 +1200,4 @@ public class Lohnsteuer2023AbJuliBig  {
     ST = ST.multiply (BigDecimal.valueOf (KZTAB))
   } // method UPTAB23
 } // type Lohnsteuer2023AbJuliBig
+
