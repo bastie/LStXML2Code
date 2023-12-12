@@ -3,28 +3,12 @@ import XCTest
 
 import JavApi
 
+// Coverage: 89.8 %
+
+/// Business object test case
+/// - Note Code coverage 89.8%
 final class LStXML2CodeTests: XCTestCase {
   
-  func testAll () throws {
-    // only business object code coverage
-    try self.testBMFSample()          // Coverage: 49,5%
-    try self.testKRV1()               // Coverage: 49,7%
-    try self.testKRV2()               // Coverage: 50,1%
-    try self.testAJAHR1KRV2()         // Coverage: 52,2%
-    try self.testSTKL3()              // Coverage: 53,3%
-    try self.testSTKL5PVS1PVZ1()      // Coverage: 58,4%
-    try self.testSTKL5PVS0PVZ1()      // Coverage: 58,4%
-    try self.testSTKL6PVS1PVZ0()      // Coverage: 58,7%
-    try self.testSTKL4LZZ0PVS1PVZ1()
-    try self.testSTKL2LZZ0PVS1()      // Coverage: 63,2%
-    try self.testSTKL3LZZ2()
-    try self.testSTKL3LZZ3()
-    try self.testSTKL3LZZ4()          // Coverage: 65.2%
-    try self.testAF0F1()
-    try self.testAF1F0p2()            // Coverage: 64.4%
-    /*
-     */
-  }
   
   /// Dieser Test beinhaltet das Beispiel von der Webseite [Eingangsinterface des BMF Steuerrechner](https://www.bmf-steuerrechner.de/interface/einganginterface.xhtml)
   ///
@@ -696,7 +680,428 @@ final class LStXML2CodeTests: XCTestCase {
     XCTAssertEqual(calculator.WVFRBM, 0)
   }
 
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=12345699&LZZ=1&VJAHR=2005&VKAPA=1000000
+  func testLZZ1VJAHR2005VKAPA1000000() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      LZZ:1,
+      RE4: java.math.BigDecimal(12345699),
+      VJAHR : 2005,
+      VKAPA : java.math.BigDecimal(1000000)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 3577500)
+    XCTAssertEqual(calculator.WVFRB, 9801699)
+    XCTAssertEqual(calculator.SOLZLZZ, 196762)
+    XCTAssertEqual(calculator.VFRBS2, 400200)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=12345699&LZZ=1&VJAHR=2006&VKAPA=1000000
+  func testLZZ1VJAHR2006VKAPA1000000() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      LZZ:1,
+      RE4: java.math.BigDecimal(12345699),
+      VJAHR : 2006,
+      VKAPA : java.math.BigDecimal(1000000)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 3577500)
+    XCTAssertEqual(calculator.WVFRB, 9801699)
+    XCTAssertEqual(calculator.SOLZLZZ, 196762)
+    XCTAssertEqual(calculator.VFRBS2, 384600)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=12345699&LZZ=1&VJAHR=2040&VKAPA=1000000
+  func testLZZ1VJAHR2040VKAPA1000000() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      LZZ:1,
+      RE4: java.math.BigDecimal(12345699),
+      VJAHR : 2040,
+      VKAPA : java.math.BigDecimal(1000000)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 3577500)
+    XCTAssertEqual(calculator.WVFRB, 9801699)
+    XCTAssertEqual(calculator.SOLZLZZ, 196762)
+    XCTAssertEqual(calculator.VFRBS2, 10200)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=12345699&LZZ=1&VJAHR=2039&VKAPA=1000000
+  func testLZZ1VJAHR2039VKAPA1000000() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      LZZ:1,
+      RE4: java.math.BigDecimal(12345699),
+      VJAHR : 2039,
+      VKAPA : java.math.BigDecimal(1000000)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 3577500)
+    XCTAssertEqual(calculator.WVFRB, 9801699)
+    XCTAssertEqual(calculator.SOLZLZZ, 196762)
+    XCTAssertEqual(calculator.VFRBS2, 18000)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=123499&VJAHR=2039&VKAPA=100
+  func testVJAHR2019VKAPA100() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      RE4: java.math.BigDecimal(123499),
+      VJAHR : 2019,
+      VKAPA : java.math.BigDecimal(100)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 48665)
+    XCTAssertEqual(calculator.WVFRB, 41910440)
+    XCTAssertEqual(calculator.SOLZLZZ, 2676)
+    XCTAssertEqual(calculator.VFRBS2, 118)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=123499&VJAHR=2039&VKAPA=-100
+  func testVJAHR2019VKAPAminus100() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      RE4: java.math.BigDecimal(123499),
+      VJAHR : 2019,
+      VKAPA : java.math.BigDecimal(-100)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 48665)
+    XCTAssertEqual(calculator.WVFRB, 41910440)
+    XCTAssertEqual(calculator.SOLZLZZ, 2676)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=123499&VJAHR=2039&VKAPA=-100&ALTER1=1
+  func testVJAHR2019VKAPAminus100ALTER11() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      ALTER1: 1,
+      RE4: java.math.BigDecimal(123499),
+      VJAHR : 2019,
+      VKAPA : java.math.BigDecimal(-100)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 48428)
+    XCTAssertEqual(calculator.WVFRB, 41720440)
+    XCTAssertEqual(calculator.SOLZLZZ, 2663)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=123499&VJAHR=2039&VKAPA=-100&ALTER1=1&ZKF=2
+  func testVJAHR2019VKAPAminus100ALTER11ZKF2() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      ALTER1: 1,
+      RE4: java.math.BigDecimal(123499),
+      VJAHR : 2019,
+      VKAPA : java.math.BigDecimal(-100),
+      ZKF: java.math.BigDecimal(2)
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 48428)
+    XCTAssertEqual(calculator.WVFRB, 41720440)
+    XCTAssertEqual(calculator.SOLZLZZ, 2663)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&JFREIB=200022&JHINZU=500055&RE4=12345
+  func testJFREIBHINZU() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      JFREIB: java.math.BigDecimal.valueOf("2000.22")!,
+      JHINZU: java.math.BigDecimal.valueOf("5000.55")!,
+      RE4: java.math.BigDecimal.valueOf("12345")!
+    )
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 1745)
+    XCTAssertEqual(calculator.WVFRB, 2430400)
+    XCTAssertEqual(calculator.SOLZLZZ, 0)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
   
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&SONSTB=100000&STS=200000&RE4=22345
+  func testSTS() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      RE4: java.math.BigDecimal.valueOf("22345")!,
+      SONSTB: java.math.BigDecimal(100000) // Cent
+    )
+    calculator.STS = java.math.BigDecimal(200000) // Cent
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 4990)
+    XCTAssertEqual(calculator.WVFRB, 5561500)
+    XCTAssertEqual(calculator.SOLZLZZ, 13)
+    XCTAssertEqual(calculator.VFRBS2, 100000)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&STKL=5&SONSTB=100000&STS=200000&RE4=22345
+  func testSTKL5STS() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      RE4: java.math.BigDecimal.valueOf("22345")!,
+      SONSTB: java.math.BigDecimal(100000), // Cent
+      STKL: 5
+    )
+    calculator.STS = java.math.BigDecimal(200000) // Cent
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 6701)
+    XCTAssertEqual(calculator.WVFRB, 5557900)
+    XCTAssertEqual(calculator.SOLZLZZ, 217)
+    XCTAssertEqual(calculator.VFRBS2, 100000)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
   
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&af=1&f=0.2&AJAHR=1&STKL=6&PKV=2&RE4=123456
+  func testAF1F0point2STKL6() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      RE4: java.math.BigDecimal(123456),
+      STKL: 6
+    )
+    calculator.af = 1
+    calculator.f = 0.2
+    calculator.PKV = 2
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.LSTLZZ, 10278)
+    XCTAssertEqual(calculator.WVFRB, 42348660)
+    XCTAssertEqual(calculator.SOLZLZZ, 565)
+    XCTAssertEqual(calculator.VKVLZZ, 527)
+    // must be zero
+    XCTAssertEqual(calculator.VFRB, 0)
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
   
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&af=1&f=0.2&AJAHR=1&STKL=5&PKV=2&RE4=123456
+  func testAF1F0point2STKL5() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      AJAHR: 1,
+      RE4: java.math.BigDecimal(123456),
+      STKL: 5
+    )
+    calculator.af = 1
+    calculator.f = 0.2
+    calculator.PKV = 2
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 10246)
+    XCTAssertEqual(calculator.WVFRB, 42222060)
+    XCTAssertEqual(calculator.SOLZLZZ, 563)
+    XCTAssertEqual(calculator.VKVLZZ, 527)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.VFRBS2, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+
 }

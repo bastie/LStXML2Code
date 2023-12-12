@@ -8,6 +8,11 @@ LStXML2Code ist ein Framework, welches ermöglicht die XML-Programmablaufpläne 
 
 ![The World is our](bgworld.png)
 
+![PAP 2024](2023-11-03-PAP-2024-anlage-1.png)
+
+
+@Image(source:2023-11-03-PAP-2024-anlage-1.png)
+
 ## Topics
 
 ### Developer
@@ -15,5 +20,4 @@ LStXML2Code ist ein Framework, welches ermöglicht die XML-Programmablaufpläne 
 - <doc:GettingStarted>
 - <doc:Architecture>
 - ``AbstractTreeEncoding``
-
 
