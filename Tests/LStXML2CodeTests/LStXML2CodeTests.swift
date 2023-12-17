@@ -3,10 +3,13 @@ import XCTest
 
 import JavApi
 
+
 // Coverage: 89.8 %
 
 /// Business object test case
-/// - Note Code coverage 89.8%
+/// - Note: Code coverage 89.8%
+/// - Note: Die BMF Webschnittstelle ist nicht vollständig und korrekt implementiert. Wenn nicht anders gesetzt wird LZZ mit Wert 4 angenommen und nicht geprüft (Wert 1234 wird auch als gültig betrachtet). Die STKL wird mit 1 angenommen. In der textuellen Beschreibung wird hingegen z.B. vorgeschrieben, dass LZZ nur 1-4 sein darf. Gleichzeitig weist das ITZBund / BMF darauf hin, dass die Werte per Default mit 0 initialisiert werden.
+/// Entsprechend kommt es zu Abweichungen bei generierten Code nicht nur bei hiesiger Generierung sondern auch bei anderen getesteten Implemntierungen.
 final class LStXML2CodeTests: XCTestCase {
   
   
@@ -713,6 +716,8 @@ final class LStXML2CodeTests: XCTestCase {
     XCTAssertEqual(calculator.WVFRBM, 0)
   }
 
+
+  
   // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&AJAHR=1&RE4=12345699&LZZ=1&VJAHR=2006&VKAPA=1000000
   func testLZZ1VJAHR2006VKAPA1000000() throws {
     let calculator = Lohnsteuer2023AbJuliBig(
@@ -987,6 +992,36 @@ final class LStXML2CodeTests: XCTestCase {
     XCTAssertEqual(calculator.WVFRB, 5561500)
     XCTAssertEqual(calculator.SOLZLZZ, 13)
     XCTAssertEqual(calculator.VFRBS2, 100000)
+    // must be zero
+    XCTAssertEqual(calculator.BK, 0)
+    XCTAssertEqual(calculator.BKS, 0)
+    XCTAssertEqual(calculator.BKV, 0)
+    XCTAssertEqual(calculator.SOLZS, 0)
+    XCTAssertEqual(calculator.SOLZV, 0)
+    XCTAssertEqual(calculator.STS, 0)
+    XCTAssertEqual(calculator.STV, 0)
+    XCTAssertEqual(calculator.VKVLZZ, 0)
+    XCTAssertEqual(calculator.VKVSONST, 0)
+    XCTAssertEqual(calculator.VFRBS1, 0)
+    XCTAssertEqual(calculator.WVFRBO, 0)
+    XCTAssertEqual(calculator.WVFRBM, 0)
+  }
+  // https://www.bmf-steuerrechner.de/interface/2023AbJuliVersion1.xhtml?code=ext2023&SONSTB=-100000&STS=-200000&RE4=22345
+  func testSTSminus() throws {
+    let calculator = Lohnsteuer2023AbJuliBig(
+      RE4: java.math.BigDecimal.valueOf("22345")!,
+      SONSTB: java.math.BigDecimal(-100000) // Cent
+    )
+    calculator.STS = java.math.BigDecimal(-200000) // Cent
+    
+    calculator.MAIN()
+    
+    // must be set
+    XCTAssertEqual(calculator.VFRB, 123000)
+    XCTAssertEqual(calculator.LSTLZZ, 4990)
+    XCTAssertEqual(calculator.WVFRB, 5561500)
+    XCTAssertEqual(calculator.SOLZLZZ, 13)
+    XCTAssertEqual(calculator.VFRBS2, 0)
     // must be zero
     XCTAssertEqual(calculator.BK, 0)
     XCTAssertEqual(calculator.BKS, 0)
