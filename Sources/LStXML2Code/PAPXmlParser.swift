@@ -38,13 +38,7 @@ class PAPXmlParser : NSObject, XMLParserDelegate {
 print (elementName)
     node.setName(elementName)
     node.addAttributes (attributeDict)
-    // add node to tree
-    
-    /* Bereits in init Methode erledigt !
-    if let current = self.currentNode {
-      current.add(child: node)
-    }
-     */
+    // add node to tree over init nothing todo 
     // set node as current
     self.currentNode = node
   }
