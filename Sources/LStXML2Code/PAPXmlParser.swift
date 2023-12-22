@@ -35,23 +35,22 @@ class PAPXmlParser : NSObject, XMLParserDelegate {
   public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
     // create new node
     let node = Node (newParent: self.currentNode)
+print (elementName)
     node.setName(elementName)
     node.addAttributes (attributeDict)
     // add node to tree
+    
+    /* Bereits in init Methode erledigt !
     if let current = self.currentNode {
       current.add(child: node)
     }
+     */
     // set node as current
     self.currentNode = node
   }
   
   // parse tag (end)
   public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-    
-    // decision: add root only at the end of parsing
-    if "PAP" == elementName {
-      print("",terminator: "")
-    }
     
     if let current = self.currentNode {
       if current.isRoot() {
