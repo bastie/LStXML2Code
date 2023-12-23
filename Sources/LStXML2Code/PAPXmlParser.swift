@@ -35,7 +35,6 @@ class PAPXmlParser : NSObject, XMLParserDelegate {
   public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
     // create new node
     let node = Node (newParent: self.currentNode)
-print (elementName)
     node.setName(elementName)
     node.addAttributes (attributeDict)
     // add node to tree over init nothing todo 

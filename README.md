@@ -11,14 +11,14 @@ Die BMF Webschnittstelle ist nicht vollständig und korrekt implementiert. Folge
 
 Entsprechend kommt es zu Abweichungen bei generierten Code nicht nur bei hiesiger Generierung sondern auch bei anderen getesteten Implementierungen.
 
-Als Folge dessen ist unklar, ob die Ergebnisse der Webschnittstelle des BMF deren Ansprüche als Referenz zum testen des eigenes Quelltextes uneingeschränkt erfüllt. *Für meine Zielsetzung ist dies jedoch nicht weiter relevant.*   
+IMHO: Als Folge dessen ist mir unklar, ob die Ergebnisse der Webschnittstelle des BMF deren Ansprüche als Referenz zum testen des eigenes Quelltextes uneingeschränkt erfüllt. *Für meine Zielsetzung ist dies jedoch nicht weiter relevant.*   
 
 ## License
 
 GNU AFFERO GENERAL PUBLIC LICENSE 3.0 OR LATER
 
 In result of this project contains only the generator AGPL license is using.
-The generated source is **not** under this license.
+The generated source code is **not** under this license.
 
 ## CLI
 
@@ -26,4 +26,5 @@ The generated source is **not** under this license.
 swift run -c release BMF2Code --lang=Swift -o AnswerIs42.swift ./Tests/LStXML2CodeTests/xml/Lohnsteuer2023AbJuli.xml
 ```
 
-**Bei der Ausführung im Debug Modus werden Zusatzangaben ausgegeben, so das der Quelltext nicht ohne Anpassungen kompilierbar ist. 
+**Bei der Ausführung im Debug Modus werden Zusatzangaben ausgegeben, so das der Quelltext nicht ohne Anpassungen kompilierbar ist.**
+
