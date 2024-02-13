@@ -26,7 +26,7 @@ class PAPXmlParser : NSObject, XMLParserDelegate {
     let node = Node (newParent: self.currentNode)
     node.setName("Comment")
     node.addAttribute("value", comment)
-    currentNode?.add(child: node)
+    //currentNode?.addAndSetParent(child: node)
   }
   
   let commentAsAttribute = true

@@ -14,11 +14,11 @@ public class TwoPartDecisionNode : Node {
     setChild(at: 1, child: child)
   }
 
-  override public func add(child: Node) {
+  override public func addAndSetParent(child: Node) {
     guard getChilds().count < 2 else {
       fatalError("to much decisions in \(#file)\(#function)")
     }
-    super.add(child: child)
+    super.addAndSetParent(child: child)
   }
   
   public func getIfDecision () -> Node {

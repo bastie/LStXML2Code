@@ -38,13 +38,14 @@ public class Node : CustomStringConvertible {
   
   public init(newParent: Node? = nil) {
     self.parent = newParent
+    parent?.addAndSetParent(child: self)
   }
   
   public func getChilds () -> [Node] {
     return self.childs
   }
 
-  public func add (child : Node) {
+  public func addAndSetParent (child : Node) {
     self.childs.append(child)
     child.parent = self
   }
@@ -61,7 +62,26 @@ public class Node : CustomStringConvertible {
     }
     return self.childs[at]
   }
-  
+  func removeChild (node : Node) -> Node? {
+    for (offset, maybeSelf) in self.childs.enumerated() {
+      if node === maybeSelf { // self reference? not compare content or whatever
+        self.childs.remove(at: offset)
+        return self
+      }
+    }
+    return nil
+  }
+  func removeChildAndRemoveParent (node : Node) -> Node? {
+    for (offset, maybeSelf) in self.childs.enumerated() {
+      if node === maybeSelf { // self reference? not compare content or whatever
+        self.childs.remove(at: offset)
+        node.parent = nil
+        return self
+      }
+    }
+    return nil
+  }
+
   public func isLeaf () -> Bool {
     return childs.isEmpty
   }
@@ -97,6 +117,21 @@ public class Node : CustomStringConvertible {
   }
   public func getParent () -> Node? {
     return self.parent
+  }
+  
+  /// Set new parent to the node.
+  ///
+  /// This function remove if existing the parent and itself from parent child list and then add self to the parent child list and set the parent here
+  ///
+  /// - Parameters:
+  /// - Parameter with newParent to set
+  /// - Returns self
+  public func setParent (with newParent : Node?) -> Node {
+    if let current = self.parent {
+      current.removeChild (node: self)?.parent = nil
+    }
+    self.parent?.addAndSetParent(child: self)
+    return self
   }
 }
 

@@ -9,7 +9,7 @@ import LStXML2Code
 /// Quelletxtgenerator zur Nutzung des durch das BMF bereitgestellten Pseudo-Quelltext zur Berechnung der Lohnsteuerabzüge bei der Einkommensteuer.
 public struct BMF2Code {
   /// Interne Version
-  public static let VERSION = "1.0.2"
+  public static let VERSION = "1.0.3"
   
   
   // MARK: main entry point
