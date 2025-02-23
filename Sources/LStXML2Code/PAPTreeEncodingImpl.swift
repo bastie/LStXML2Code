@@ -24,7 +24,7 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
     for (name,value) in oldAttributes {
       newNode.addAttribute(name, value)
       if name == "exec" {
-        exec(stmt: value)
+        _ = exec(stmt: value)
       }
     }
     for child in oldNode.getChilds() {
@@ -168,7 +168,7 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
           }
           position.count += 1
         }
-        else if let nextNode = node as? DotNode { // maybe it is a float value
+        else if let _ = node as? DotNode { // maybe it is a float value
           if let _ = number {
             number!.append(".") // better generator error than runtime error, so ! instead of ? is using
             position.count += 1
@@ -230,21 +230,21 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
     // MARK: DotNodes in Statement to Tree
     
     for i in 0..<asNodes.count {
-      if let dot = asNodes[i] as? DotNode {
-        if let receiver = asNodes[i-1] as? ValueNode,
-           let message = asNodes[i+1] as? ValueNode {
+      if let _ = asNodes[i] as? DotNode {
+        if let _ = asNodes[i-1] as? ValueNode,
+           let _ = asNodes[i+1] as? ValueNode {
           //print ("call \(message.getValue()) on type \(receiver.getValue())")
         }
-        else if let receiver = asNodes[i-1] as? IdentiferNode,
-                let message = asNodes[i+1] as? ValueNode {
+        else if let _ = asNodes[i-1] as? IdentiferNode,
+                let _ = asNodes[i+1] as? ValueNode {
           //print ("call \(message.getValue()) on instance \(receiver.getName())")
         }
-        else if let receiver = asNodes[i-1] as? ClosedRoundBracketNode,
-                let message = asNodes[i+1] as? ValueNode {
+        else if let _ = asNodes[i-1] as? ClosedRoundBracketNode,
+                let _ = asNodes[i+1] as? ValueNode {
           //print ("call \(message.getValue()) on result of before")
         }
-        else if let receiver = asNodes[i-1] as? ClosedSquareBracketNode,
-                let message = asNodes[i+1] as? ValueNode {
+        else if let _ = asNodes[i-1] as? ClosedSquareBracketNode,
+                let _ = asNodes[i+1] as? ValueNode {
           //print ("call \(message.getValue()) on array element before")
         }
         else {
@@ -256,7 +256,7 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
         // Note: a subclass or subtype is handled as CONSTANT
         do {
           var messageType : String?
-          let message = asNodes[i+1]
+          let _ = asNodes[i+1]
           for var j in (i+2)..<asNodes.count {
             if let _ = asNodes[j] as? SpaceNode {
               // skip
@@ -264,11 +264,11 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
             else if let _ = asNodes[j] as? OpenRoundBracketNode {
               messageType = "METHOD"
             }
-            if let messageType {
+            if let _ = messageType {
               j = asNodes.count
             }
           }
-          if let messageType {} else {
+          if let _ = messageType {} else {
             messageType = "CONSTANT"
           }
           
@@ -694,7 +694,7 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
           }
           break
         case ".":
-          if let numeric = Int (next) // Ziffer / Nummer?
+          if let _ = Int (next) // Ziffer / Nummer?
                                       //&& !numericDetected // aber nicht schon ein Dezimal erkannt => Fehler
           {
             print ("number detected: \(next) - waiting for end")
@@ -761,7 +761,7 @@ class PAPTreeEncodingImpl : PAPTreeEncoding {
         content = next.trimmingCharacters(in: .whitespaces)
       } // END-FOR
       // last part of statement
-      var detected =  next.trimmingCharacters(in: .whitespaces)
+      let detected =  next.trimmingCharacters(in: .whitespaces)
       if detected.count > 0 {
         if callDetected {
           print ("call detected with target: \(next)")

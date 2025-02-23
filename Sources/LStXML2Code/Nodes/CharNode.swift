@@ -13,7 +13,7 @@ public class CharNode : Node , CustomDebugStringConvertible {
   
   let char : Character
   
-  static var initiated : [Character:CharNode] = [:]
+  nonisolated(unsafe) static var initiated : [Character:CharNode] = [:]
   public static func value (of newChar : Character) -> CharNode {
     if let result = initiated[newChar] {
       return result

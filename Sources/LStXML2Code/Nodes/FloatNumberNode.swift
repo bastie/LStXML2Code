@@ -25,7 +25,7 @@ public class FloatNumberNode : Node, CustomDebugStringConvertible {
   
   /// Set the new Value and return the oldValue. On error return nil
   public func setValue (stringRepresentation : String) -> Double?{
-    if let newValue = Double(stringRepresentation) {
+    if let _ = Double(stringRepresentation) {
       let oldValue = self.asString
       self.asString = stringRepresentation
       return Double(oldValue)
